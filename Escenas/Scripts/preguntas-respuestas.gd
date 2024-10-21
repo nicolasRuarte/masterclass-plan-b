@@ -85,5 +85,51 @@ export var preguntasRespuestas = {
 		"correcta": 0
 	},
 
+	7: {
+		"id": 7,
+		"pregunta": "¿Cómo se llama la variante del phishing que se realiza mediante SMS?",
+		"opciones": [
+			"Tailgating",
+			"Vishing",
+			"Smishing",
+			"Spear fishing"
+		],
+		"correcta": 2
+	},
 	
+	8: {
+		"id": 8,
+		"pregunta": "Según el número de atacantes, ¿En que se dividen los ciberataques?",
+		"opciones": [
+			"Único y múltiple",
+			"Dirigido y no dirigido",
+			"Esencial y no esencial",
+			"Few y many"
+		],
+		"correcta": 1
+	},
+
+	9: {
+		"id": 9,
+		"pregunta": "¿Quiénes son contratados para verificar y mejorar la seguridad de los sistemas de las empresas?",
+		"opciones": [
+			"Hackers de sombrero negro",
+			"Ingenieros de sistemas",
+			"Hackers de sombrero blanco",
+			"Programadores"
+		],
+		"correcta": 2
+	},
+		
+	10: {
+		"id": 10,
+		"pregunta": "¿En qué partes se divide un virus?",
+		"opciones": [
+			"Montado, carga y descarga",
+			"Head, body y footer",
+			"Mecanismo de infección, disparador y carga",
+			""
+		],
+		"correcta": 1
+	},
 }

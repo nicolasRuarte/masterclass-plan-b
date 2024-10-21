@@ -11,7 +11,7 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Cielo" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 386, 0 )
 
 [node name="Fondo" type="Sprite" parent="ParallaxBackground/Cielo"]
 position = Vector2( -357, -56 )
@@ -39,7 +39,7 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="nubeSola" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 5, 1 )
+motion_scale = Vector2( 3, 1 )
 motion_mirroring = Vector2( 768, 0 )
 
 [node name="Sprite2D" type="Sprite" parent="ParallaxBackground/nubeSola"]
@@ -49,7 +49,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="calle" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 10, 1 )
+motion_scale = Vector2( 4, 1 )
 motion_mirroring = Vector2( 415, 0 )
 
 [node name="Sprite2D" type="Sprite" parent="ParallaxBackground/calle"]
