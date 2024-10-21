@@ -1,20 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/Calle.png" type="Texture" id=1]
 [ext_resource path="res://Escenas/test.gd" type="Script" id=2]
 [ext_resource path="res://Escenas/Scripts/preguntas-respuestas.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Glacial-mountains-parallax-background_vnitti/Layers/sky.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" type="Texture" id=7]
 [ext_resource path="res://Escenas/Parallax.tscn" type="PackedScene" id=8]
-
-[sub_resource type="Theme" id=1]
-ItemList/colors/font_color = Color( 1, 1, 1, 1 )
-ItemList/colors/font_color_selected = Color( 1, 0, 0, 1 )
-ItemList/constants/hseparation = 8
-ItemList/constants/line_separation = 10
-ItemList/styles/bg = null
+[ext_resource path="res://Escenas/jugador.tscn" type="PackedScene" id=9]
 
 [node name="test" type="Control"]
 script = ExtResource( 2 )
@@ -22,57 +11,46 @@ script = ExtResource( 2 )
 [node name="datos" type="Node" parent="."]
 script = ExtResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_top = 280.0
-margin_right = 366.0
-margin_bottom = 563.0
+[node name="IU" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="IU"]
+margin_left = -8.0
+margin_top = 395.0
+margin_right = 370.0
+margin_bottom = 678.0
 color = Color( 0.435, 0.87, 0.76125, 1 )
 
-[node name="Pregunta" type="Label" parent="ColorRect"]
+[node name="Pregunta" type="Label" parent="IU/ColorRect"]
 margin_left = 75.0
-margin_top = 27.0
+margin_top = 26.0
 margin_right = 278.0
-margin_bottom = 41.0
+margin_bottom = 40.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "¿Cuál es la capital de Alemania?"
 
-[node name="opciones" type="ItemList" parent="."]
+[node name="opciones" type="ItemList" parent="IU"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 45.0
-margin_top = 370.0
-margin_right = 336.0
-margin_bottom = 451.0
-theme = SubResource( 1 )
-
-[node name="Fondo" type="Sprite" parent="."]
-visible = false
-position = Vector2( 195, 107 )
-scale = Vector2( 1.28125, 1.41204 )
-texture = ExtResource( 6 )
-
-[node name="montaña" type="Sprite" parent="Fondo"]
-texture = ExtResource( 5 )
-
-[node name="nubes" type="Sprite" parent="Fondo"]
-position = Vector2( 0.390249, -60.0197 )
-scale = Vector2( 0.997968, 0.991803 )
-texture = ExtResource( 4 )
-
-[node name="nubesSola" type="Sprite" parent="Fondo"]
-position = Vector2( -1.56098, 2.12458 )
-scale = Vector2( 0.997968, 0.991803 )
-texture = ExtResource( 7 )
-
-[node name="Calle" type="Sprite" parent="."]
-position = Vector2( 179, 229 )
-scale = Vector2( 6.28906, 1.64648 )
-texture = ExtResource( 1 )
+margin_left = -144.0
+margin_top = 168.0
+margin_right = 147.0
+margin_bottom = 249.0
 
 [node name="Parallax" parent="." instance=ExtResource( 8 )]
-position = Vector2( 195, 107 )
+position = Vector2( 0, 9 )
 scale = Vector2( 1.28125, 1.41204 )
 
-[connection signal="item_selected" from="opciones" to="." method="_on_ItemList_item_selected"]
+[node name="jugador" parent="." instance=ExtResource( 9 )]
+position = Vector2( 178, 301 )
+
+[node name="DemoraRespuesta" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+__meta__ = {
+"_editor_description_": "Temporizador para establecer una demora entre que el jugador termina de responder la pregunta y se cargue la siguiente"
+}
+
+[connection signal="item_selected" from="IU/opciones" to="." method="_on_ItemList_item_selected"]
+[connection signal="timeout" from="DemoraRespuesta" to="." method="_on_DemoraRespuesta_timeout"]

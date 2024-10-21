@@ -2,6 +2,7 @@ extends Node
 
 export var preguntasRespuestas = {
 	0: {
+		"id": 0,
 		"pregunta": "¿Qué tipo de ciberataque es el phishing?",
 		"opciones": [
 			"Malware",
@@ -13,6 +14,7 @@ export var preguntasRespuestas = {
 	},
 	
 	1: {
+		"id": 1,
 		"pregunta": "¿Qué tipo de ciberataque es un troyano?",
 		"opciones": [
 			"Inyección de código",
@@ -24,6 +26,7 @@ export var preguntasRespuestas = {
 	},
 	
 	2: {
+		"id": 2,
 		"pregunta": "¿Qué es la ciberseguridad?",
 		"opciones": [
 			"El conjunto de métodos y tecnologías para proteger la información",
@@ -35,6 +38,7 @@ export var preguntasRespuestas = {
 	},
 	
 	3: {
+		"id": 3,
 		"pregunta": "¿Para qué nos sirve la ciberseguridad?",
 		"opciones": [
 			"Para proteger nuestra información",
@@ -46,6 +50,7 @@ export var preguntasRespuestas = {
 	},
 		
 	4: {
+		"id": 4,
 		"pregunta": "¿Con qué deben empezar los links para comprobar que son páginas seguras?",
 		"opciones": [
 			"www.",
@@ -57,6 +62,7 @@ export var preguntasRespuestas = {
 	},
 		
 	5: {
+		"id": 5,
 		"pregunta": "¿Cuál es la función de las VPN?",
 		"opciones": [
 			"Encriptar contraseñas",
@@ -68,6 +74,7 @@ export var preguntasRespuestas = {
 	},
 		
 	6: {
+		"id": 6,
 		"pregunta": "¿Cuál de estos NO es un malware?",
 		"opciones": [
 			"Abandonware",
@@ -78,26 +85,5 @@ export var preguntasRespuestas = {
 		"correcta": 0
 	},
 
-	7: {
-		"pregunta": "",
-		"opciones": [
-			"",
-			"",
-			"",
-			""
-		],
-		"correcta": 0
-	},
-	
-	8: {
-		"pregunta": "",
-		"opciones": [
-			"",
-			"",
-			"",
-			""
-		],
-		"correcta": 0
-	},
 	
 }
