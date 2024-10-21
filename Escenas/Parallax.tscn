@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Glacial-mountains-parallax-background_vnitti/Layers/sky.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/jugador.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Calle.png" type="Texture" id=6]
+
+[node name="Parallax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Cielo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+
+[node name="Fondo" type="Sprite" parent="ParallaxBackground/Cielo"]
+position = Vector2( -357, -56 )
+scale = Vector2( 2.52604, 2.08333 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Montañas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 491.207, 0 )
+
+[node name="Sprite2D" type="Sprite" parent="ParallaxBackground/Montañas"]
+position = Vector2( -4, -58 )
+scale = Vector2( 1.281, 1.412 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Nubes" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 384, 0 )
+
+[node name="Sprite2D" type="Sprite" parent="ParallaxBackground/Nubes"]
+position = Vector2( -14, -196 )
+scale = Vector2( 1, 2.08333 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="nubeSola" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 768, 0 )
+
+[node name="Sprite2D" type="Sprite" parent="ParallaxBackground/nubeSola"]
+position = Vector2( -11, -56 )
+scale = Vector2( 1, 2.08333 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="calle" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 415, 0 )
+
+[node name="Sprite2D" type="Sprite" parent="ParallaxBackground/calle"]
+position = Vector2( -15, 254 )
+scale = Vector2( 6.5, 2.23437 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="jugador" parent="." instance=ExtResource( 3 )]
+position = Vector2( 182, 282 )
