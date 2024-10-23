@@ -1,13 +1,13 @@
 extends Control
-onready var pregunta = get_node("IU/ColorRect/Pregunta")
-onready var opciones = get_node("IU/opciones")
+onready var pregunta = get_node("IU/ColorRect/Panel/Pregunta")
+onready var opciones = get_node("IU/ColorRect/opciones")
 onready var nodoDatos
 onready var demoraRespuesta := get_node("DemoraRespuesta")
 onready var timerActualizarDistancia := get_node("actualizarDistancia")
 onready var labelMtsRecorridos := get_node("IU/mtsRecorridos")
 onready var labelVictoria := get_node("IU/victoria")
 
-const cantidadPreguntas := 6
+const cantidadPreguntas := 10
 var datos
 
 export var velocidadJugador = Vector2(10, 0)
@@ -36,21 +36,31 @@ func _ready():
 	cargar_preguntas_y_respuestas(ordenPreguntas[0])
 
 func _on_ItemList_item_selected(index):
-	if (victoria == false):
+	victoria = numeroPregunta == cantidadPreguntas
+	
+	if (victoria):
+		get_tree().paused = true
+		labelVictoria.text = "¡Terminaste todas las preguntas!"
+	else:
 		if (esRespuestaCorrecta(numeroPregunta, index)):
+			opciones.set_item_custom_bg_color(index, Color(0.0, 1.0, 0.0))
 			rachaRespuestasCorrectas += 1
 			velocidadJugador.x += aumentoVelocidadJugador
-			demoraRespuesta.start()
 		else:
+			opciones.set_item_custom_bg_color(index, Color(1.0, 0.0, 0.0))
 			rachaRespuestasCorrectas = 0
-			velocidadJugador.x -= 15
-			demoraRespuesta.start()
+			var menorQueCero = velocidadJugador.x - disminucionVelocidadJugador < 0
+			if (menorQueCero):
+				velocidadJugador.x = 10
+			else:
+				velocidadJugador.x -= disminucionVelocidadJugador
 		
-		numeroPregunta += 1
+		for i in range (0, 4):
+			opciones.set_item_disabled(i, true)
+		demoraRespuesta.start()
+		
 		print("numeroPregunta: ", numeroPregunta)
 		print("velocidadJugador: ", velocidadJugador)
-	else:
-		labelVictoria.text = "¡Ganaste!"
 
 func cargar_preguntas_y_respuestas(idPregunta : int):
 	pregunta.text = datos[idPregunta]["pregunta"]
@@ -72,6 +82,7 @@ func esRespuestaCorrecta(numeroPregunta : int, index):
 
 
 func _on_DemoraRespuesta_timeout():
+	numeroPregunta += 1
 	cargar_preguntas_y_respuestas(ordenPreguntas[numeroPregunta])
 
 

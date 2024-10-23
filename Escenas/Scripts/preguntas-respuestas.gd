@@ -30,7 +30,7 @@ export var preguntasRespuestas = {
 		"pregunta": "¿Qué es la ciberseguridad?",
 		"opciones": [
 			"El conjunto de métodos y tecnologías para proteger la información",
-			"Requisitos de seguridad para mantener un ciber",
+			"Requisitos  para mantener un ciber",
 			"Un lenguaje de programación",
 			"Un tipo de virus"
 		],
@@ -99,7 +99,7 @@ export var preguntasRespuestas = {
 	
 	8: {
 		"id": 8,
-		"pregunta": "Según el número de atacantes, ¿En que se dividen los ciberataques?",
+		"pregunta": "Según el número de objetivos, ¿En que se dividen los ciberataques?",
 		"opciones": [
 			"Único y múltiple",
 			"Dirigido y no dirigido",
