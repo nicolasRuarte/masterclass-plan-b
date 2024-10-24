@@ -1,15 +1,28 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Escenas/test.gd" type="Script" id=2]
 [ext_resource path="res://Escenas/Scripts/preguntas-respuestas.gd" type="Script" id=3]
 [ext_resource path="res://Escenas/Parallax.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Escenas/jugador.tscn" type="PackedScene" id=9]
 
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.509804, 0.0509804, 0.0509804, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id=11]
+/styles/hola = SubResource( 10 )
+
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.93, 0.93, 0.93, 1 )
 
+[sub_resource type="StyleBoxFlat" id=9]
+
 [sub_resource type="Theme" id=5]
 Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/styles/normal = SubResource( 9 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 corner_radius_top_left = 5
@@ -46,6 +59,7 @@ margin_top = 17.9797
 margin_right = 341.0
 margin_bottom = 77.9797
 rect_scale = Vector2( 1.00344, 1.25232 )
+theme = SubResource( 11 )
 custom_styles/panel = SubResource( 6 )
 
 [node name="Pregunta" type="Label" parent="IU/ColorRect/Panel"]
@@ -53,10 +67,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -122.0
-margin_top = -46.9866
-margin_right = 218.0
-margin_bottom = -11.9866
+margin_left = -153.0
+margin_top = -61.0
+margin_right = 275.0
+margin_bottom = -24.0
 rect_scale = Vector2( 0.70768, 1.72376 )
 theme = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -72,7 +86,7 @@ anchor_bottom = 0.5
 margin_left = -167.0
 margin_top = -18.5539
 margin_right = 124.0
-margin_bottom = 62.4461
+margin_bottom = 53.4461
 rect_scale = Vector2( 1.15238, 1.33865 )
 theme = SubResource( 8 )
 items = [ "Elemento 0", null, false, "Elemento 1", null, false, "Elemento 2", null, false, "Elemento 3", null, false ]
