@@ -5,21 +5,29 @@ onready var nodoDatos
 onready var demoraRespuesta := get_node("DemoraRespuesta")
 onready var timerActualizarDistancia := get_node("actualizarDistancia")
 onready var labelMtsRecorridos := get_node("IU/mtsRecorridos")
-onready var labelVictoria := get_node("IU/victoria")
+onready var labelFin := get_node("IU/Fin")
+onready var labelRacha := get_node("IU/Racha")
+onready var labelBonificador := get_node("IU/Bonificador")
 
+#Variables para las preguntas
 const cantidadPreguntas := 10
 var datos
 
+#Variables de la velocidad del jugador
 export var velocidadJugador = Vector2(10, 0)
-var jugadorRespondio := false
-var ordenPreguntas := []
-var numeroPregunta := 0
 const aumentoVelocidadJugador = 30
 const disminucionVelocidadJugador = aumentoVelocidadJugador / 2
-var victoria := false
+
+#Variables para el desarrollo de las preguntas del juego
+var ordenPreguntas := []
+var numeroPregunta := 0
+
+#Variable de finalización de juego
+var fin := false
 
 #variables que se muestran en pantalla
 var rachaRespuestasCorrectas := 0
+var bonificador = 0
 var mtsRecorridos := 0.0
 
 func _ready():
@@ -36,24 +44,26 @@ func _ready():
 	cargar_preguntas_y_respuestas(ordenPreguntas[0])
 
 func _on_ItemList_item_selected(index):
-	victoria = numeroPregunta == cantidadPreguntas
+	fin = numeroPregunta == cantidadPreguntas - 1
 	
-	if (victoria):
+	if (fin):
 		get_tree().paused = true
-		labelVictoria.text = "¡Terminaste todas las preguntas!"
+		labelFin.text = "¡Terminaste todas las preguntas!"
+		
+	if (esRespuestaCorrecta(numeroPregunta, index)):
+		opciones.set_item_custom_bg_color(index, Color(0.0, 1.0, 0.0))
+		rachaRespuestasCorrectas += 1
+		labelRacha.text = str(rachaRespuestasCorrectas)
+		velocidadJugador.x += aumentoVelocidadJugador + bonificador
 	else:
-		if (esRespuestaCorrecta(numeroPregunta, index)):
-			opciones.set_item_custom_bg_color(index, Color(0.0, 1.0, 0.0))
-			rachaRespuestasCorrectas += 1
-			velocidadJugador.x += aumentoVelocidadJugador
+		opciones.set_item_custom_bg_color(index, Color(1.0, 0.0, 0.0))
+		rachaRespuestasCorrectas = 0
+		bonificador = 0
+		var menorQueCero = velocidadJugador.x - disminucionVelocidadJugador < 0
+		if (menorQueCero):
+			velocidadJugador.x = 10
 		else:
-			opciones.set_item_custom_bg_color(index, Color(1.0, 0.0, 0.0))
-			rachaRespuestasCorrectas = 0
-			var menorQueCero = velocidadJugador.x - disminucionVelocidadJugador < 0
-			if (menorQueCero):
-				velocidadJugador.x = 10
-			else:
-				velocidadJugador.x -= disminucionVelocidadJugador
+			velocidadJugador.x -= disminucionVelocidadJugador
 		
 		for i in range (0, 4):
 			opciones.set_item_disabled(i, true)
@@ -91,3 +101,19 @@ func _on_actualizarDistancia_timeout():
 	mtsRecorridos += velocidadJugador.x * 10
 	
 	labelMtsRecorridos.text = "mts. recorridos: " + str(mtsRecorridos)
+
+func bonusRacha(racha): 
+	match racha:
+		5:
+			bonificador = 10
+			labelBonificador.text = "+" + str(bonificador)
+		10:
+			bonificador = 20
+			labelBonificador.text = "+" + str(bonificador)
+		15:
+			bonificador = 30
+			labelBonificador.text = "+" + str(bonificador)
+		20:
+			bonificador = 40
+			labelBonificador.text = "+" + str(bonificador)
+		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Escenas/test.gd" type="Script" id=2]
 [ext_resource path="res://Escenas/Scripts/preguntas-respuestas.gd" type="Script" id=3]
@@ -35,6 +35,9 @@ ItemList/colors/font_color = Color( 0, 0, 0, 1 )
 ItemList/styles/bg = SubResource( 7 )
 
 [sub_resource type="Theme" id=1]
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Theme" id=12]
 Label/colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="test" type="Control"]
@@ -100,10 +103,25 @@ margin_bottom = 47.0
 theme = SubResource( 1 )
 text = "mts recorridos:"
 
-[node name="victoria" type="Label" parent="IU"]
+[node name="Fin" type="Label" parent="IU"]
 margin_top = 160.0
 margin_right = 360.0
 margin_bottom = 232.0
+
+[node name="Racha" type="Label" parent="IU"]
+margin_left = 7.0
+margin_top = 32.0
+margin_right = 47.0
+margin_bottom = 46.0
+theme = SubResource( 12 )
+text = "0"
+
+[node name="Bonificador" type="Label" parent="IU"]
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 64.0
+margin_bottom = 46.0
+theme = SubResource( 12 )
 
 [node name="Parallax" parent="." instance=ExtResource( 8 )]
 position = Vector2( 0, 9 )
