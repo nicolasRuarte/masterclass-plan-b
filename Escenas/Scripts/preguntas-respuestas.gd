@@ -126,10 +126,46 @@ export var preguntasRespuestas = {
 		"pregunta": "¿En qué partes se divide un virus?",
 		"opciones": [
 			"Montado, carga y descarga",
-			"Head, body y footer",
 			"Mecanismo de infección, disparador y carga",
-			""
+			"Head, body y footer",
+			"Cabezal, torso y pata"
 		],
 		"correcta": 1
 	},
+
+	11: {
+		"id": 11,
+		"pregunta": "¿Qué significa DDoS en español?",
+		"opciones": [
+			"Deleitación de Servicio Disminuida",
+			"Despliegue de Servicio Distribuido",
+			"Denegación de Servicio Distribuida",
+			"Desarme de Servicio Desatendido"
+		],
+		"correcta": 2
+	},
+
+	12: {
+		"id": 12,
+		"pregunta": "¿Qué es un hacker ético?",
+		"opciones": [
+			"Un hacker que roba información",
+			"Un desarrollador de software",
+			"Un experto en redes",
+			"Un experto en ciberseguridad que prueba sistemas para mejorar su seguridad"
+		],
+		"correcta": 3
+	},
+	
+	13: {
+		"id": 13,
+		"pregunta": "¿Qué caracteriza a un virus informático?",
+		"opciones": [
+			"Su capacidad de replicarse y modificar el sistema operativo",
+			"Su capacidad para detectar y eliminar el malware",
+			"Su capacidad para cifrar archivos y exigir un rescate",
+			"Su capacidad para mejorar el rendimiento del sistema"
+		],
+		"correcta": 0
+	}
 }
