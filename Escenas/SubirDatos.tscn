@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Escenas/SubirDatos.gd" type="Script" id=1]
+[ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id=2]
+ColorRect/styles/style = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.156863, 0.156863, 0.196078, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 0.937255, 0, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id=10]
+TextEdit/styles/focus = SubResource( 9 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 15
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=7]
+Label/colors/font_color = Color( 1, 0, 0, 1 )
+Label/fonts/font = SubResource( 8 )
+
+[node name="SubirDatos" type="Control"]
+pause_mode = 2
+margin_right = 358.0
+margin_bottom = 557.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = 67.0
+margin_right = -36.0
+margin_bottom = -112.0
+theme = SubResource( 2 )
+
+[node name="Login" type="Label" parent="."]
+margin_left = 49.0
+margin_top = 130.0
+margin_right = 104.0
+margin_bottom = 161.0
+theme = SubResource( 3 )
+text = "Nombre de usuario:"
+
+[node name="nombreUsuario" type="TextEdit" parent="."]
+pause_mode = 2
+margin_left = 48.0
+margin_top = 148.0
+margin_right = 294.0
+margin_bottom = 188.0
+theme = SubResource( 10 )
+
+[node name="Login2" type="Label" parent="."]
+margin_left = 49.0
+margin_top = 231.0
+margin_right = 104.0
+margin_bottom = 262.0
+theme = SubResource( 3 )
+text = "Puntaje:
+"
+
+[node name="puntaje" type="TextEdit" parent="."]
+margin_left = 48.0
+margin_top = 249.0
+margin_right = 294.0
+margin_bottom = 289.0
+text = "123"
+readonly = true
+
+[node name="SubirDatos" type="Button" parent="."]
+pause_mode = 2
+margin_left = 82.0
+margin_top = 355.0
+margin_right = 235.0
+margin_bottom = 395.0
+text = "Subir datos"
+
+[node name="lblError" type="Label" parent="."]
+visible = false
+margin_left = 48.0
+margin_top = 296.0
+margin_right = 295.0
+margin_bottom = 320.0
+theme = SubResource( 7 )
+text = "Nombre de usuario ya existe"
+
+[node name="VerificarUsuario" type="HTTPRequest" parent="."]
+
+[node name="SubirPuntaje" type="HTTPRequest" parent="."]
+
+[connection signal="button_up" from="SubirDatos" to="." method="_on_SubirDatos_button_up"]
+[connection signal="request_completed" from="VerificarUsuario" to="." method="_on_VerificarUsuario_request_completed"]
+[connection signal="request_completed" from="SubirPuntaje" to="." method="_on_SubirPuntaje_request_completed"]
