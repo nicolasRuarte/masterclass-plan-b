@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Masterclass-plan-b"
-run/main_scene="res://Escenas/test.tscn"
+run/main_scene="res://Escenas/Inicio.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+EscenaTransicion="*res://Escenas/EscenaTransicion.tscn"
 
 [display]
 

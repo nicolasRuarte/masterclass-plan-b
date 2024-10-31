@@ -11,13 +11,14 @@ onready var labelBonificador := get_node("IU/Bonificador")
 
 var subirDatos = preload("res://Escenas/SubirDatos.tscn")
 
+
 #Variables para las preguntas
 var cantidadPreguntas := 0
 var datos
 
 #Variables de la velocidad del jugador
-export var velocidadJugador = Vector2(10, 0)
-const aumentoVelocidadJugador = 30
+export var velocidadJugador = Vector2(0, -10)
+const aumentoVelocidadJugador = -30
 const disminucionVelocidadJugador = aumentoVelocidadJugador / 2
 
 #Variables para el desarrollo de las preguntas del juego
@@ -60,17 +61,17 @@ func _on_ItemList_item_selected(index):
 		rachaRespuestasCorrectas += 1
 		bonusRacha(rachaRespuestasCorrectas)
 		labelRacha.text = str(rachaRespuestasCorrectas)
-		velocidadJugador.x += aumentoVelocidadJugador + bonificador
+		velocidadJugador.y += aumentoVelocidadJugador - bonificador
 	else:
 		opciones.set_item_custom_bg_color(index, Color(1.0, 0.0, 0.0))
 		rachaRespuestasCorrectas = 0
 		bonusRacha(rachaRespuestasCorrectas)
 		bonificador = 0
-		var menorQueCero = velocidadJugador.x - disminucionVelocidadJugador < 0
+		var menorQueCero = velocidadJugador.y - disminucionVelocidadJugador < 0
 		if (menorQueCero):
-			velocidadJugador.x = 10
+			velocidadJugador.y = 10
 		else:
-			velocidadJugador.x -= disminucionVelocidadJugador
+			velocidadJugador.y += disminucionVelocidadJugador
 		
 	for i in range (0, 4):
 		opciones.set_item_disabled(i, true)
@@ -107,9 +108,9 @@ func _on_DemoraRespuesta_timeout():
 
 
 func _on_actualizarDistancia_timeout():
-	mtsRecorridos += velocidadJugador.x * 10
+	mtsRecorridos += velocidadJugador.y * 10 * -1	
 	
-	labelMtsRecorridos.text = "mts. recorridos: " + str(mtsRecorridos)
+	labelMtsRecorridos.text = "kms recorridos: " + str(mtsRecorridos)
 
 func bonusRacha(racha): 
 	match racha:
@@ -125,4 +126,3 @@ func bonusRacha(racha):
 		20:
 			bonificador = 40
 			labelBonificador.text = "+" + str(bonificador)
-		

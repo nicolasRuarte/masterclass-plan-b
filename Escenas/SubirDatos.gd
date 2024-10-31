@@ -6,7 +6,7 @@ onready var puntaje = get_node("puntaje")
 
 var usuarioExiste := false
 var json
-const sslValid := false
+const sslValid := true
 var nombre : String
 var customHeaders :=  ["Content-Type: application/json"]
 var datos : Dictionary
@@ -31,7 +31,7 @@ func _on_SubirDatos_button_up():
 			"puntaje": int(puntaje.text)
 		}
 		
-		httpRequest.request("http://localhost:4000/obtener-registros", customHeaders, sslValid, HTTPClient.METHOD_GET)
+		httpRequest.request("https://pagina-puntajes.onrender.com/obtener-registros", customHeaders, sslValid, HTTPClient.METHOD_GET)
 
 func _on_VerificarUsuario_request_completed(result, response_code, headers, body):
 	print("result: ", result)
@@ -57,9 +57,12 @@ func _on_VerificarUsuario_request_completed(result, response_code, headers, body
 		$lblError.visible = false
 		json = JSON.print(datos)
 		print("Json enviado: ", json)
-		httpRequest.request("http://localhost:4000/enviar-datos", customHeaders, sslValid, HTTPClient.METHOD_POST, json)
+		$SubirPuntaje.request("https://pagina-puntajes.onrender.com/enviar-datos", customHeaders, sslValid, HTTPClient.METHOD_POST, json)
 		print("Enviando registro")
 
 
 func _on_SubirPuntaje_request_completed(_result, _response_code, _headers, _body):
 	print("POST request completada")
+	$lblError.add_color_override("font_color", Color(0, 1, 0))
+	$lblError.text = "Datos enviados exitosamente"
+	$lblError.visible = true

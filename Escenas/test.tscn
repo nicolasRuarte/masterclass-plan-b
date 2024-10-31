@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Escenas/test.gd" type="Script" id=2]
 [ext_resource path="res://Escenas/Scripts/preguntas-respuestas.gd" type="Script" id=3]
-[ext_resource path="res://Escenas/Parallax.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Escenas/ParallaxEspacio.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Audio/Musica/3DS Nintendo Video Theme (High Quality, Remastered 2022) [bpAHtjqUWvs].mp3" type="AudioStream" id=5]
 [ext_resource path="res://Escenas/jugador.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=17]
@@ -42,7 +43,7 @@ size = 12
 font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=1]
-Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/fonts/font = SubResource( 20 )
 
 [sub_resource type="DynamicFont" id=21]
@@ -55,7 +56,7 @@ Label/fonts/font = SubResource( 21 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=12]
-Label/colors/font_color = Color( 0, 0, 0, 1 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/fonts/font = SubResource( 22 )
 
 [node name="test" type="Control"]
@@ -64,7 +65,10 @@ script = ExtResource( 2 )
 [node name="datos" type="Node" parent="."]
 script = ExtResource( 3 )
 
+[node name="ParallaxEspacio" parent="." instance=ExtResource( 4 )]
+
 [node name="IU" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="ColorRect" type="ColorRect" parent="IU"]
 margin_left = -8.0
@@ -72,7 +76,7 @@ margin_top = 395.0
 margin_right = 370.0
 margin_bottom = 678.0
 rect_scale = Vector2( 1, 0.667411 )
-color = Color( 0.435, 0.87, 0.76125, 1 )
+color = Color( 0.435294, 0.870588, 0.760784, 1 )
 
 [node name="Panel" type="Panel" parent="IU/ColorRect"]
 margin_left = 41.0
@@ -119,7 +123,7 @@ margin_top = 33.0
 margin_right = 283.0
 margin_bottom = 47.0
 theme = SubResource( 1 )
-text = "mts recorridos:"
+text = "kms recorridos:"
 
 [node name="Fin" type="Label" parent="IU"]
 margin_top = 160.0
@@ -142,10 +146,6 @@ margin_right = 64.0
 margin_bottom = 46.0
 theme = SubResource( 12 )
 
-[node name="Parallax" parent="." instance=ExtResource( 8 )]
-position = Vector2( 0, 9 )
-scale = Vector2( 1.28125, 1.41204 )
-
 [node name="jugador" parent="." instance=ExtResource( 9 )]
 position = Vector2( 178, 301 )
 
@@ -159,6 +159,11 @@ __meta__ = {
 [node name="actualizarDistancia" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="item_selected" from="IU/ColorRect/opciones" to="." method="_on_ItemList_item_selected"]
 [connection signal="timeout" from="DemoraRespuesta" to="." method="_on_DemoraRespuesta_timeout"]

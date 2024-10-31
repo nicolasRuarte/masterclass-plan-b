@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/DuckTales Music (NES) - The Moon Theme [KF32DRg9opA].mp3-4b898a3961f6e649db2bf61b739a55c7.mp3str"
+
+[deps]
+
+source_file="res://Audio/Musica/DuckTales Music (NES) - The Moon Theme [KF32DRg9opA].mp3"
+dest_files=[ "res://.import/DuckTales Music (NES) - The Moon Theme [KF32DRg9opA].mp3-4b898a3961f6e649db2bf61b739a55c7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

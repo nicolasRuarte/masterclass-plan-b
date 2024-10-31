@@ -1,0 +1,254 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Escenas/ParallaxEspacio.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fuentes/PlayMeGames-Demo.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Escenas/Inicio.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/roberto finish.png" type="Texture" id=5]
+[ext_resource path="res://Audio/Musica/DuckTales Music (NES) - The Moon Theme [KF32DRg9opA].mp3" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/Animaciones/transicionFuera.tres" type="Animation" id=8]
+[ext_resource path="res://Sprites/Animaciones/transicion.tres" type="Animation" id=9]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 800, 800 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 800, 0, 800, 800 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 1600, 0, 800, 800 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 2400, 0, 800, 800 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 3200, 0, 800, 800 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 4000, 0, 800, 800 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 4800, 0, 800, 800 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 5600, 0, 800, 800 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="Theme" id=7]
+RichTextLabel/colors/default_color = Color( 0.458824, 0.898039, 0, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="Theme" id=1]
+RichTextLabel/colors/default_color = Color( 0.458824, 0.898039, 0, 1 )
+RichTextLabel/fonts/normal_font = SubResource( 2 )
+RichTextLabel/styles/bg = SubResource( 5 )
+RichTextLabel/styles/normal = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 5.0
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.458824, 0.898039, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id=24]
+Button/colors/font_color_hover = Color( 0.458824, 0.898039, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.458824, 0.898039, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.458824, 0.898039, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.458824, 0.898039, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "texto"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "ultimoCaracter"
+length = 1.6
+loop = true
+step = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Intro:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.996 ]
+}
+
+[node name="Inicio" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.435294, 0.870588, 0.760784, 1 )
+
+[node name="ParallaxEspacio" parent="." instance=ExtResource( 2 )]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 168, 120 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 17 )
+frame = 4
+playing = true
+
+[node name="Título" type="RichTextLabel" parent="."]
+margin_left = 20.0
+margin_top = 25.0
+margin_right = 341.0
+margin_bottom = 83.0
+theme = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
+text = "Cyberviaje"
+
+[node name="Intro" type="RichTextLabel" parent="."]
+margin_left = 17.0
+margin_top = 205.0
+margin_right = 339.0
+margin_bottom = 467.0
+theme = SubResource( 1 )
+custom_styles/normal = SubResource( 6 )
+text = "¡Bienvenido/a!
+
+Ayuda a Roberto a recorrer la mayor cantidad de distancia posible con su nuevo motor impulsado por conocimiento en ciberseguridad.
+
+Para ello tendrás que responder correctamente la mayor cantidad de preguntas posibles. 
+
+Recuerda que si obtienes el mayor puntaje ganarás un premio.
+
+¡Buena suerte!"
+fit_content_height = true
+
+[node name="AnimacionTitulo" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="Jugar" type="Button" parent="."]
+margin_left = 117.0
+margin_top = 484.0
+margin_right = 228.0
+margin_bottom = 528.0
+theme = SubResource( 24 )
+custom_colors/font_color = Color( 0.458824, 0.898039, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+custom_styles/hover = SubResource( 25 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+text = "Jugar"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 21 )
+anims/texto = SubResource( 22 )
+anims/transicion = ExtResource( 9 )
+anims/transicionFuera = ExtResource( 8 )
+anims/ultimoCaracter = SubResource( 23 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -2.447
+autoplay = true
+
+[connection signal="timeout" from="AnimacionTitulo" to="." method="_on_AnimacionTitulo_timeout"]
+[connection signal="button_up" from="Jugar" to="." method="_on_Jugar_button_up"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -167,5 +167,19 @@ export var preguntasRespuestas = {
 			"Su capacidad para mejorar el rendimiento del sistema"
 		],
 		"correcta": 0
-	}
+	},
+	
+	14: {
+		"id": 14,
+		"pregunta": "¿Cuál es la manera recomendada de almacenar contraseñas?",
+		"opciones": [
+			"En un archivo de texto",
+			"En un gestor de contraseñas",
+			"En una libreta u hoja de papel",
+			"En WhatsApp"
+		],
+		"correcta": 1
+	},
+	
+
 }
