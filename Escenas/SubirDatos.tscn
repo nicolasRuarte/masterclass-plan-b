@@ -187,7 +187,7 @@ custom_fonts/font = SubResource( 11 )
 text = "Terminaste todas las preguntas"
 
 [connection signal="focus_entered" from="nombreUsuario" to="." method="_on_nombreUsuario_focus_entered"]
-[connection signal="gui_input" from="nombreUsuario" to="." method="_on_nombreUsuario_gui_input"]
+[connection signal="focus_exited" from="nombreUsuario" to="." method="_on_nombreUsuario_focus_exited"]
 [connection signal="button_up" from="SubirDatos" to="." method="_on_SubirDatos_button_up"]
 [connection signal="request_completed" from="VerificarUsuario" to="." method="_on_VerificarUsuario_request_completed"]
 [connection signal="request_completed" from="SubirPuntaje" to="." method="_on_SubirPuntaje_request_completed"]

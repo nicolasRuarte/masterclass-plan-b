@@ -10,6 +10,7 @@ const sslValid := true
 var nombre : String
 var customHeaders :=  ["Content-Type: application/json"]
 var datos : Dictionary
+var teclado := preload("res://Escenas/TecladoVirtual.tscn")
 
 func _ready():
 	var test = get_parent().get_parent()
@@ -69,8 +70,8 @@ func _on_SubirPuntaje_request_completed(_result, _response_code, _headers, _body
 
 
 func _on_nombreUsuario_focus_entered():
-	OS.show_virtual_keyboard()
+	var instancia = teclado.instance()
+	add_child(instancia)
 
-
-func _on_nombreUsuario_gui_input(event):
-	OS.show_virtual_keyboard()
+func _on_nombreUsuario_focus_exited():
+	$TecladoVirtual/ColorRect.visible = true

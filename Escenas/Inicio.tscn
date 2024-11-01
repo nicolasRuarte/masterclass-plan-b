@@ -171,7 +171,6 @@ color = Color( 0.435294, 0.870588, 0.760784, 1 )
 position = Vector2( 168, 120 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 17 )
-frame = 4
 playing = true
 
 [node name="Título" type="RichTextLabel" parent="."]
