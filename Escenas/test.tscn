@@ -147,7 +147,7 @@ anchor_bottom = 0.5
 margin_left = -167.0
 margin_top = -162.5
 margin_right = 124.0
-margin_bottom = -48.5
+margin_bottom = 47.5
 rect_scale = Vector2( 1.15238, 1.33865 )
 theme = SubResource( 8 )
 custom_colors/guide_color = Color( 0, 1, 0.309804, 1 )
@@ -189,7 +189,7 @@ margin_bottom = 46.0
 theme = SubResource( 12 )
 
 [node name="jugador" parent="." instance=ExtResource( 9 )]
-position = Vector2( 178, 209 )
+position = Vector2( 182, -318 )
 
 [node name="DemoraRespuesta" type="Timer" parent="."]
 wait_time = 1.5

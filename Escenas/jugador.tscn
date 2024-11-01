@@ -1,47 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Escenas/jugador.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/roberto finish.png" type="Texture" id=2]
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 800, 800 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
-region = Rect2( 800, 0, 800, 800 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
-region = Rect2( 1600, 0, 800, 800 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
-region = Rect2( 2400, 0, 800, 800 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
-region = Rect2( 3200, 0, 800, 800 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
-region = Rect2( 4000, 0, 800, 800 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
-region = Rect2( 4800, 0, 800, 800 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 2 )
-region = Rect2( 5600, 0, 800, 800 )
-
-[sub_resource type="SpriteFrames" id=17]
-animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 8.0
-} ]
 
 [node name="jugador" type="KinematicBody2D"]
 position = Vector2( 178, 271 )
@@ -51,9 +11,9 @@ script = ExtResource( 1 )
 current = true
 process_mode = 0
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 6.10352e-05, 0 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 17 )
-frame = 5
-playing = true
+texture = ExtResource( 2 )
+hframes = 10
+vframes = 4

@@ -181,5 +181,51 @@ export var preguntasRespuestas = {
 		"correcta": 1
 	},
 	
-
+	15: {
+		"id": 15,
+		"pregunta": "¿Qué significan las siglas en inglés de VPN?",
+		"opciones": [
+			"Virtual Private Notification",
+			"Virtual Popular Network",
+			"Virtual Private Network",
+			"Viral Private Network"
+		],
+		"correcta": 2
+	},
+	
+16: {
+		"id": 16,
+		"pregunta": "¿Cómo se llama la técnica utilizada por las VPN para proteger el tráfico de red?",
+		"opciones": [
+			"Hiding",
+			"Esconding",
+			"Encrypting",
+			"Tunneling"
+		],
+		"correcta": 3
+	},
+	
+	17: {
+		"id": 17,
+		"pregunta": "¿En qué año fue sancionada la ley 26.388 para los delitos informáticos?",
+		"opciones": [
+			"2008",
+			"2009",
+			"2010",
+			"2011"
+		],
+		"correcta": 0
+	},
+	
+	18: {
+		"id": 18,
+		"pregunta": "",
+		"opciones": [
+			"",
+			"",
+			"",
+			""
+		],
+		"correcta": 1
+	},
 }
