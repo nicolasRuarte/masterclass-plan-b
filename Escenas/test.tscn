@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Escenas/test.gd" type="Script" id=2]
 [ext_resource path="res://Escenas/Scripts/preguntas-respuestas.gd" type="Script" id=3]
 [ext_resource path="res://Escenas/ParallaxEspacio.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Musica/3DS Nintendo Video Theme (High Quality, Remastered 2022) [bpAHtjqUWvs].mp3" type="AudioStream" id=5]
+[ext_resource path="res://fuentes/little-pixel.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Escenas/jugador.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=17]
@@ -24,8 +25,24 @@ bg_color = Color( 0.93, 0.93, 0.93, 1 )
 bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="Theme" id=5]
-Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color = Color( 0, 1, 0.309804, 1 )
 Label/styles/normal = SubResource( 18 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 13
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 1, 0.309804, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 1, 1, 1, 1 )
@@ -36,7 +53,24 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id=8]
 ItemList/colors/font_color = Color( 0, 0, 0, 1 )
+ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
 ItemList/styles/bg = SubResource( 19 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 10
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 1, 0.309804, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="DynamicFont" id=20]
 size = 12
@@ -71,12 +105,12 @@ script = ExtResource( 3 )
 layer = 0
 
 [node name="ColorRect" type="ColorRect" parent="IU"]
-margin_left = -8.0
-margin_top = 395.0
-margin_right = 370.0
-margin_bottom = 678.0
+margin_left = -7.0
+margin_top = 283.0
+margin_right = 371.0
+margin_bottom = 858.0
 rect_scale = Vector2( 1, 0.667411 )
-color = Color( 0.435294, 0.870588, 0.760784, 1 )
+color = Color( 0.0352941, 0.0509804, 0.164706, 1 )
 
 [node name="Panel" type="Panel" parent="IU/ColorRect"]
 margin_left = 41.0
@@ -98,7 +132,9 @@ margin_right = 275.0
 margin_bottom = -24.0
 rect_scale = Vector2( 0.70768, 1.72376 )
 theme = SubResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 1, 0.309804, 1 )
+custom_fonts/font = SubResource( 24 )
+custom_styles/normal = SubResource( 23 )
 text = "¿Cuál es la capital de Alemania?"
 align = 1
 autowrap = true
@@ -109,13 +145,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -167.0
-margin_top = -18.5539
+margin_top = -162.5
 margin_right = 124.0
-margin_bottom = 53.4461
+margin_bottom = -48.5
 rect_scale = Vector2( 1.15238, 1.33865 )
 theme = SubResource( 8 )
+custom_colors/guide_color = Color( 0, 1, 0.309804, 1 )
+custom_colors/font_color = Color( 0, 1, 0.309804, 1 )
+custom_fonts/font = SubResource( 26 )
+custom_styles/bg = SubResource( 25 )
 items = [ "Elemento 0", null, false, "Elemento 1", null, false, "Elemento 2", null, false, "Elemento 3", null, false ]
 max_text_lines = 2
+auto_height = true
+icon_mode = 0
 
 [node name="mtsRecorridos" type="Label" parent="IU"]
 margin_left = 185.0
@@ -147,7 +189,7 @@ margin_bottom = 46.0
 theme = SubResource( 12 )
 
 [node name="jugador" parent="." instance=ExtResource( 9 )]
-position = Vector2( 178, 301 )
+position = Vector2( 178, 209 )
 
 [node name="DemoraRespuesta" type="Timer" parent="."]
 wait_time = 1.5

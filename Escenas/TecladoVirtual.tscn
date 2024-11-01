@@ -1,0 +1,355 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Escenas/Scripts/TecladoVirtual.gd" type="Script" id=1]
+
+[node name="TecladoVirtual" type="CanvasLayer"]
+layer = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1.0
+margin_top = 250.0
+margin_right = 360.0
+margin_bottom = 470.0
+
+[node name="Q" type="Button" parent="ColorRect"]
+margin_right = 23.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Q"
+
+[node name="W" type="Button" parent="ColorRect"]
+margin_left = 36.0
+margin_right = 61.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "W"
+
+[node name="E" type="Button" parent="ColorRect"]
+margin_left = 76.0
+margin_right = 96.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "E"
+
+[node name="R" type="Button" parent="ColorRect"]
+margin_left = 109.0
+margin_right = 129.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "R"
+
+[node name="T" type="Button" parent="ColorRect"]
+margin_left = 142.0
+margin_right = 162.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "T"
+
+[node name="Y" type="Button" parent="ColorRect"]
+margin_left = 176.0
+margin_right = 196.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Y"
+
+[node name="U" type="Button" parent="ColorRect"]
+margin_left = 210.0
+margin_right = 232.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "U"
+
+[node name="I" type="Button" parent="ColorRect"]
+margin_left = 246.0
+margin_right = 266.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "I"
+
+[node name="O" type="Button" parent="ColorRect"]
+margin_left = 281.0
+margin_top = 1.0
+margin_right = 304.0
+margin_bottom = 21.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "O"
+
+[node name="P" type="Button" parent="ColorRect"]
+margin_left = 320.0
+margin_right = 340.0
+margin_bottom = 20.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "P"
+
+[node name="A" type="Button" parent="ColorRect"]
+margin_top = 35.0
+margin_right = 21.0
+margin_bottom = 55.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "A"
+
+[node name="S" type="Button" parent="ColorRect"]
+margin_left = 36.0
+margin_top = 33.0
+margin_right = 56.0
+margin_bottom = 53.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "S"
+
+[node name="D" type="Button" parent="ColorRect"]
+margin_left = 71.0
+margin_top = 33.0
+margin_right = 93.0
+margin_bottom = 53.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "D"
+
+[node name="F" type="Button" parent="ColorRect"]
+margin_left = 109.0
+margin_top = 35.0
+margin_right = 129.0
+margin_bottom = 55.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "F"
+
+[node name="G" type="Button" parent="ColorRect"]
+margin_left = 142.0
+margin_top = 34.0
+margin_right = 164.0
+margin_bottom = 54.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "G"
+
+[node name="H" type="Button" parent="ColorRect"]
+margin_left = 180.0
+margin_top = 34.0
+margin_right = 202.0
+margin_bottom = 54.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "H"
+
+[node name="J" type="Button" parent="ColorRect"]
+margin_left = 217.0
+margin_top = 35.0
+margin_right = 237.0
+margin_bottom = 55.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "J"
+
+[node name="K" type="Button" parent="ColorRect"]
+margin_left = 251.0
+margin_top = 36.0
+margin_right = 271.0
+margin_bottom = 56.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "K"
+
+[node name="L" type="Button" parent="ColorRect"]
+margin_left = 287.0
+margin_top = 38.0
+margin_right = 307.0
+margin_bottom = 58.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "L"
+
+[node name="N_" type="Button" parent="ColorRect"]
+margin_left = 322.0
+margin_top = 38.0
+margin_right = 344.0
+margin_bottom = 58.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Ñ"
+
+[node name="Z" type="Button" parent="ColorRect"]
+margin_left = 2.0
+margin_top = 70.0
+margin_right = 22.0
+margin_bottom = 90.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Z"
+
+[node name="X" type="Button" parent="ColorRect"]
+margin_left = 33.0
+margin_top = 68.0
+margin_right = 53.0
+margin_bottom = 88.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "X"
+
+[node name="C" type="Button" parent="ColorRect"]
+margin_left = 75.0
+margin_top = 68.0
+margin_right = 95.0
+margin_bottom = 88.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "C"
+
+[node name="V" type="Button" parent="ColorRect"]
+margin_left = 109.0
+margin_top = 68.0
+margin_right = 129.0
+margin_bottom = 88.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "V"
+
+[node name="B" type="Button" parent="ColorRect"]
+margin_left = 142.0
+margin_top = 70.0
+margin_right = 163.0
+margin_bottom = 90.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "B"
+
+[node name="N" type="Button" parent="ColorRect"]
+margin_left = 178.0
+margin_top = 69.0
+margin_right = 200.0
+margin_bottom = 89.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "N"
+
+[node name="M" type="Button" parent="ColorRect"]
+margin_left = 216.0
+margin_top = 71.0
+margin_right = 240.0
+margin_bottom = 91.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "M"
+
+[node name="0" type="Button" parent="ColorRect"]
+margin_left = 2.0
+margin_top = 153.0
+margin_right = 26.0
+margin_bottom = 173.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "0"
+
+[node name="1" type="Button" parent="ColorRect"]
+margin_top = 110.0
+margin_right = 24.0
+margin_bottom = 130.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "1"
+
+[node name="2" type="Button" parent="ColorRect"]
+margin_left = 36.0
+margin_top = 111.0
+margin_right = 60.0
+margin_bottom = 131.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "2"
+
+[node name="3" type="Button" parent="ColorRect"]
+margin_left = 80.0
+margin_top = 113.0
+margin_right = 104.0
+margin_bottom = 133.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "3"
+
+[node name="4" type="Button" parent="ColorRect"]
+margin_left = 122.0
+margin_top = 112.0
+margin_right = 146.0
+margin_bottom = 132.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "4"
+
+[node name="5" type="Button" parent="ColorRect"]
+margin_left = 164.0
+margin_top = 112.0
+margin_right = 188.0
+margin_bottom = 132.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "5"
+
+[node name="6" type="Button" parent="ColorRect"]
+margin_left = 206.0
+margin_top = 113.0
+margin_right = 230.0
+margin_bottom = 133.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "6"
+
+[node name="7" type="Button" parent="ColorRect"]
+margin_left = 247.0
+margin_top = 116.0
+margin_right = 271.0
+margin_bottom = 136.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "7"
+
+[node name="8" type="Button" parent="ColorRect"]
+margin_left = 284.0
+margin_top = 113.0
+margin_right = 308.0
+margin_bottom = 133.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "8"
+
+[node name="9" type="Button" parent="ColorRect"]
+margin_left = 321.0
+margin_top = 113.0
+margin_right = 345.0
+margin_bottom = 133.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "9"
+
+[node name="Space" type="Button" parent="ColorRect"]
+margin_left = 160.0
+margin_top = 166.0
+margin_right = 284.0
+margin_bottom = 186.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = " "
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 32.0
+margin_top = 50.0
+margin_right = 308.0
+margin_bottom = 110.0
+focus_mode = 0
+caret_blink = true
+
+[connection signal="button_up" from="ColorRect/Q" to="." method="_on_Q_button_up"]
+[connection signal="button_up" from="ColorRect/W" to="." method="_on_W_button_up"]
+[connection signal="button_up" from="ColorRect/E" to="." method="_on_E_button_up"]
+[connection signal="button_up" from="ColorRect/R" to="." method="_on_R_button_up"]
+[connection signal="pressed" from="ColorRect/T" to="." method="_on_T_pressed"]
+[connection signal="pressed" from="ColorRect/Y" to="." method="_on_Y_pressed"]
+[connection signal="button_up" from="ColorRect/U" to="." method="_on_U_button_up"]
+[connection signal="button_up" from="ColorRect/I" to="." method="_on_I_button_up"]
+[connection signal="button_up" from="ColorRect/O" to="." method="_on_O_button_up"]
+[connection signal="button_up" from="ColorRect/P" to="." method="_on_P_button_up"]
+[connection signal="button_up" from="ColorRect/A" to="." method="_on_A_button_up"]
+[connection signal="button_up" from="ColorRect/S" to="." method="_on_S_button_up"]
+[connection signal="button_up" from="ColorRect/D" to="." method="_on_D_button_up"]
+[connection signal="button_up" from="ColorRect/F" to="." method="_on_F_button_up"]
+[connection signal="button_up" from="ColorRect/G" to="." method="_on_G_button_up"]
+[connection signal="button_up" from="ColorRect/H" to="." method="_on_H_button_up"]
+[connection signal="button_up" from="ColorRect/J" to="." method="_on_J_button_up"]
+[connection signal="button_up" from="ColorRect/K" to="." method="_on_K_button_up"]
+[connection signal="button_up" from="ColorRect/L" to="." method="_on_L_button_up"]
+[connection signal="button_up" from="ColorRect/N_" to="." method="_on_N__button_up"]
+[connection signal="button_up" from="ColorRect/Z" to="." method="_on_Z_button_up"]
+[connection signal="button_up" from="ColorRect/X" to="." method="_on_X_button_up"]
+[connection signal="button_up" from="ColorRect/C" to="." method="_on_C_button_up"]
+[connection signal="button_up" from="ColorRect/V" to="." method="_on_V_button_up"]
+[connection signal="button_up" from="ColorRect/B" to="." method="_on_B_button_up"]
+[connection signal="button_up" from="ColorRect/N" to="." method="_on_N_button_up"]
+[connection signal="button_up" from="ColorRect/M" to="." method="_on_M_button_up"]
+[connection signal="button_up" from="ColorRect/0" to="." method="_on_0_button_up"]
+[connection signal="button_up" from="ColorRect/1" to="." method="_on_1_button_up"]
+[connection signal="button_up" from="ColorRect/2" to="." method="_on_2_button_up"]
+[connection signal="button_up" from="ColorRect/3" to="." method="_on_3_button_up"]
+[connection signal="button_up" from="ColorRect/4" to="." method="_on_4_button_up"]
+[connection signal="button_up" from="ColorRect/5" to="." method="_on_5_button_up"]
+[connection signal="button_up" from="ColorRect/6" to="." method="_on_6_button_up"]
+[connection signal="button_up" from="ColorRect/7" to="." method="_on_7_button_up"]
+[connection signal="button_up" from="ColorRect/8" to="." method="_on_8_button_up"]
+[connection signal="button_up" from="ColorRect/9" to="." method="_on_9_button_up"]
+[connection signal="button_up" from="ColorRect/Space" to="." method="_on_Space_button_up"]

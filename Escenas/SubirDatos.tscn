@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Escenas/SubirDatos.gd" type="Script" id=1]
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=2]
@@ -28,7 +28,60 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="Theme" id=10]
+TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
 TextEdit/styles/focus = SubResource( 9 )
+
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 1, 0.309804, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id=14]
+TextEdit/colors/font_color_readonly = Color( 0, 1, 0.309804, 1 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 1, 0.309804, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=17]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 1, 0.309804, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0, 1, 0.309804, 1 )
+border_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 15
@@ -37,6 +90,9 @@ font_data = ExtResource( 2 )
 [sub_resource type="Theme" id=7]
 Label/colors/font_color = Color( 1, 0, 0, 1 )
 Label/fonts/font = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 2 )
 
 [node name="SubirDatos" type="Control"]
 pause_mode = 2
@@ -52,6 +108,7 @@ margin_top = 67.0
 margin_right = -36.0
 margin_bottom = -112.0
 theme = SubResource( 2 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="Login" type="Label" parent="."]
 margin_left = 49.0
@@ -68,6 +125,8 @@ margin_top = 148.0
 margin_right = 294.0
 margin_bottom = 188.0
 theme = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
 
 [node name="Login2" type="Label" parent="."]
 margin_left = 49.0
@@ -83,15 +142,25 @@ margin_left = 48.0
 margin_top = 249.0
 margin_right = 294.0
 margin_bottom = 289.0
+theme = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
+custom_styles/read_only = SubResource( 16 )
 text = "123"
 readonly = true
 
 [node name="SubirDatos" type="Button" parent="."]
 pause_mode = 2
-margin_left = 82.0
+margin_left = 87.0
 margin_top = 355.0
-margin_right = 235.0
+margin_right = 240.0
 margin_bottom = 395.0
+custom_colors/font_color = Color( 0, 1, 0.309804, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0.309804, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/normal = SubResource( 19 )
 text = "Subir datos"
 
 [node name="lblError" type="Label" parent="."]
@@ -108,6 +177,17 @@ text = "Nombre de usuario ya existe"
 
 [node name="SubirPuntaje" type="HTTPRequest" parent="."]
 
+[node name="Label" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 81.0
+margin_right = 316.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 0, 1, 0.309804, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Terminaste todas las preguntas"
+
+[connection signal="focus_entered" from="nombreUsuario" to="." method="_on_nombreUsuario_focus_entered"]
+[connection signal="gui_input" from="nombreUsuario" to="." method="_on_nombreUsuario_gui_input"]
 [connection signal="button_up" from="SubirDatos" to="." method="_on_SubirDatos_button_up"]
 [connection signal="request_completed" from="VerificarUsuario" to="." method="_on_VerificarUsuario_request_completed"]
 [connection signal="request_completed" from="SubirPuntaje" to="." method="_on_SubirPuntaje_request_completed"]

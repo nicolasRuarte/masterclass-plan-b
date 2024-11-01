@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Escenas/ParallaxEspacio.tscn" type="PackedScene" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://Escenas/Inicio.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/roberto finish.png" type="Texture" id=5]
 [ext_resource path="res://Audio/Musica/DuckTales Music (NES) - The Moon Theme [KF32DRg9opA].mp3" type="AudioStream" id=6]
-[ext_resource path="res://Sprites/Animaciones/transicionFuera.tres" type="Animation" id=8]
-[ext_resource path="res://Sprites/Animaciones/transicion.tres" type="Animation" id=9]
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
@@ -50,7 +48,7 @@ animations = [ {
 } ]
 
 [sub_resource type="Theme" id=7]
-RichTextLabel/colors/default_color = Color( 0.458824, 0.898039, 0, 1 )
+RichTextLabel/colors/default_color = Color( 0, 1, 0.309804, 1 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 48
@@ -64,7 +62,7 @@ font_data = ExtResource( 1 )
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="Theme" id=1]
-RichTextLabel/colors/default_color = Color( 0.458824, 0.898039, 0, 1 )
+RichTextLabel/colors/default_color = Color( 0, 1, 0.309804, 1 )
 RichTextLabel/fonts/normal_font = SubResource( 2 )
 RichTextLabel/styles/bg = SubResource( 5 )
 RichTextLabel/styles/normal = SubResource( 4 )
@@ -76,7 +74,7 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color( 0.458824, 0.898039, 0, 1 )
+border_color = Color( 0, 1, 0.309804, 1 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -95,14 +93,14 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.458824, 0.898039, 0, 1 )
+border_color = Color( 0, 1, 0.309804, 1 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id=19]
-bg_color = Color( 0.458824, 0.898039, 0, 1 )
+bg_color = Color( 0, 1, 0.309804, 1 )
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -119,13 +117,13 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 0.458824, 0.898039, 0, 1 )
+border_color = Color( 0, 1, 0.309804, 1 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=26]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Intro:percent_visible")
@@ -137,10 +135,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.0 ]
+"values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=27]
 resource_name = "texto"
 length = 5.0
 tracks/0/type = "value"
@@ -154,24 +152,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
-}
-
-[sub_resource type="Animation" id=23]
-resource_name = "ultimoCaracter"
-length = 1.6
-loop = true
-step = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Intro:percent_visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 1.0, 0.996 ]
 }
 
 [node name="Inicio" type="Control"]
@@ -210,6 +190,8 @@ margin_right = 339.0
 margin_bottom = 467.0
 theme = SubResource( 1 )
 custom_styles/normal = SubResource( 6 )
+visible_characters = 0
+percent_visible = 0.0
 text = "¡Bienvenido/a!
 
 Ayuda a Roberto a recorrer la mayor cantidad de distancia posible con su nuevo motor impulsado por conocimiento en ciberseguridad.
@@ -230,25 +212,21 @@ margin_top = 484.0
 margin_right = 228.0
 margin_bottom = 528.0
 theme = SubResource( 24 )
-custom_colors/font_color = Color( 0.458824, 0.898039, 0, 1 )
+custom_colors/font_color = Color( 0, 1, 0.309804, 1 )
 custom_fonts/font = SubResource( 18 )
 custom_styles/hover = SubResource( 25 )
 custom_styles/pressed = SubResource( 19 )
 custom_styles/normal = SubResource( 20 )
 text = "Jugar"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 21 )
-anims/texto = SubResource( 22 )
-anims/transicion = ExtResource( 9 )
-anims/transicionFuera = ExtResource( 8 )
-anims/ultimoCaracter = SubResource( 23 )
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -2.447
 autoplay = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 26 )
+anims/texto = SubResource( 27 )
+
 [connection signal="timeout" from="AnimacionTitulo" to="." method="_on_AnimacionTitulo_timeout"]
 [connection signal="button_up" from="Jugar" to="." method="_on_Jugar_button_up"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -67,9 +67,9 @@ func _on_ItemList_item_selected(index):
 		rachaRespuestasCorrectas = 0
 		bonusRacha(rachaRespuestasCorrectas)
 		bonificador = 0
-		var menorQueCero = velocidadJugador.y - disminucionVelocidadJugador < 0
-		if (menorQueCero):
-			velocidadJugador.y = 10
+		var mayorQueCero = velocidadJugador.y + disminucionVelocidadJugador < 0
+		if (mayorQueCero):
+			velocidadJugador.y = -10
 		else:
 			velocidadJugador.y += disminucionVelocidadJugador
 		

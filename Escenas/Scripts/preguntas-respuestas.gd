@@ -29,7 +29,7 @@ export var preguntasRespuestas = {
 		"id": 2,
 		"pregunta": "¿Qué es la ciberseguridad?",
 		"opciones": [
-			"El conjunto de métodos y tecnologías para proteger la información",
+			"Todo lo referido a la seguridad informática",
 			"Requisitos  para mantener un ciber",
 			"Un lenguaje de programación",
 			"Un tipo de virus"
@@ -42,8 +42,8 @@ export var preguntasRespuestas = {
 		"pregunta": "¿Para qué nos sirve la ciberseguridad?",
 		"opciones": [
 			"Para proteger nuestra información",
-			"Para saber cuánto vale nuestra información",
-			"Para saber los riesgos de que se robe nuestra información",
+			"Para valorar nuestra información",
+			"Para evitar el robo de información",
 			"Todas las anteriores"
 		],
 		"correcta": 3
@@ -67,7 +67,7 @@ export var preguntasRespuestas = {
 		"opciones": [
 			"Encriptar contraseñas",
 			"Prevenir fraudes cibernéticos",
-			"Redirigir nuestra señal para navegar de forma segura",
+			"Redirigir nuestra señal al navegar",
 			"Todas las anteriores"
 		],
 		"correcta": 2
@@ -152,7 +152,7 @@ export var preguntasRespuestas = {
 			"Un hacker que roba información",
 			"Un desarrollador de software",
 			"Un experto en redes",
-			"Un experto en ciberseguridad que prueba sistemas para mejorar su seguridad"
+			"Un profesional de la ciberseguridad"
 		],
 		"correcta": 3
 	},
@@ -161,10 +161,10 @@ export var preguntasRespuestas = {
 		"id": 13,
 		"pregunta": "¿Qué caracteriza a un virus informático?",
 		"opciones": [
-			"Su capacidad de replicarse y modificar el sistema operativo",
-			"Su capacidad para detectar y eliminar el malware",
-			"Su capacidad para cifrar archivos y exigir un rescate",
-			"Su capacidad para mejorar el rendimiento del sistema"
+			"Su capacidad de replicarse",
+			"Su capacidad para eliminar malware",
+			"Su capacidad para cifrar archivos ",
+			"Su capacidad para mejorar el sistema"
 		],
 		"correcta": 0
 	},

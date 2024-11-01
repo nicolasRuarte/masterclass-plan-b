@@ -66,3 +66,11 @@ func _on_SubirPuntaje_request_completed(_result, _response_code, _headers, _body
 	$lblError.add_color_override("font_color", Color(0, 1, 0))
 	$lblError.text = "Datos enviados exitosamente"
 	$lblError.visible = true
+
+
+func _on_nombreUsuario_focus_entered():
+	OS.show_virtual_keyboard()
+
+
+func _on_nombreUsuario_gui_input(event):
+	OS.show_virtual_keyboard()
