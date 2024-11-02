@@ -164,7 +164,7 @@ export var preguntasRespuestas = {
 			"Su capacidad de replicarse",
 			"Su capacidad para eliminar malware",
 			"Su capacidad para cifrar archivos ",
-			"Su capacidad para mejorar el sistema"
+			"Su capacidad de mejorar el sistema"
 		],
 		"correcta": 0
 	},
@@ -248,7 +248,7 @@ export var preguntasRespuestas = {
 			"Activar la autenticación de dos factores",
 			"Actualizar regularmente el software",
 			"Educarte sobre phishing",
-			"AGREGAR OPCIÓN"
+			"Usar siempre la misma contraseña"
 		],
 		"correcta": 3
 	},
@@ -269,8 +269,8 @@ export var preguntasRespuestas = {
 		"id": 22,
 		"pregunta": "¿Qué tipo de ciberataque es la estafa de Mercado Pago falso?",
 		"opciones": [
-			"Ingeniería social",
 			"Malware",
+			"Ingeniería social",
 			"DDoS",
 			"Inyección de código"
 		],

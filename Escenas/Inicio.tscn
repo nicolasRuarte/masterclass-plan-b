@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Escenas/ParallaxEspacio.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fuentes/PlayMeGames-Demo.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Escenas/Inicio.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/roberto finish.png" type="Texture" id=5]
+[ext_resource path="res://roberto-achicado.png" type="Texture" id=5]
 [ext_resource path="res://Audio/Musica/DuckTales Music (NES) - The Moon Theme [KF32DRg9opA].mp3" type="AudioStream" id=6]
 
 [sub_resource type="Theme" id=7]
@@ -114,6 +114,46 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 480, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 640, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 800, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 960, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 5 )
+region = Rect2( 1120, 0, 160, 160 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
 [node name="Inicio" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -181,12 +221,12 @@ autoplay = true
 anims/RESET = SubResource( 26 )
 anims/texto = SubResource( 27 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 177, 120 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-hframes = 8
-vframes = 4
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 180.75, 130.25 )
+scale = Vector2( 1.04062, 1.12812 )
+frames = SubResource( 29 )
+frame = 7
+playing = true
 
 [connection signal="timeout" from="AnimacionTitulo" to="." method="_on_AnimacionTitulo_timeout"]
 [connection signal="button_up" from="Jugar" to="." method="_on_Jugar_button_up"]
