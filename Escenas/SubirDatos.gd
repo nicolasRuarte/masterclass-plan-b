@@ -11,6 +11,7 @@ var nombre : String
 var customHeaders :=  ["Content-Type: application/json"]
 var datos : Dictionary
 var teclado := preload("res://Escenas/TecladoVirtual.tscn")
+var yaSubioDatos := false
 
 func _ready():
 	var test = get_parent().get_parent()
@@ -32,7 +33,8 @@ func _on_SubirDatos_button_up():
 			"puntaje": int(puntaje.text)
 		}
 		
-		httpRequest.request("https://pagina-puntajes.onrender.com/obtener-registros", customHeaders, sslValid, HTTPClient.METHOD_GET)
+		if(!yaSubioDatos):
+			httpRequest.request("https://pagina-puntajes.onrender.com/obtener-registros", customHeaders, sslValid, HTTPClient.METHOD_GET)
 
 func _on_VerificarUsuario_request_completed(result, response_code, headers, body):
 	print("result: ", result)
@@ -63,6 +65,7 @@ func _on_VerificarUsuario_request_completed(result, response_code, headers, body
 
 
 func _on_SubirPuntaje_request_completed(_result, _response_code, _headers, _body):
+	yaSubioDatos = true
 	print("POST request completada")
 	$lblError.add_color_override("font_color", Color(0, 1, 0))
 	$lblError.text = "Datos enviados exitosamente"
