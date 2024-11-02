@@ -43,6 +43,7 @@ func _ready():
 	#Aleatorizando el orden de las preguntas al comenzar el juego
 	for i in range(0, cantidadPreguntas):
 		ordenPreguntas.append(datos[i]["id"])
+	
 	ordenPreguntas.shuffle()
 	print("Orden de las preguntas: ", ordenPreguntas)
 	
