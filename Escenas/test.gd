@@ -15,6 +15,7 @@ var subirDatos = preload("res://Escenas/SubirDatos.tscn")
 #Variables para las preguntas
 var cantidadPreguntas := 0
 var datos
+var yaRespondio = false
 
 #Variables de la velocidad del jugador
 export var velocidadJugador = Vector2(0, -10)
@@ -55,7 +56,10 @@ func _on_ItemList_item_selected(index):
 		$IU.add_child(cuestionario)
 		get_tree().paused = true
 		labelFin.text = "¡Terminaste todas las preguntas!"
-
+	
+	if(yaRespondio):
+		return
+	
 	if (esRespuestaCorrecta(numeroPregunta, index)):
 		opciones.set_item_custom_bg_color(index, Color(0.0, 1.0, 0.0))
 		rachaRespuestasCorrectas += 1
@@ -72,11 +76,12 @@ func _on_ItemList_item_selected(index):
 			velocidadJugador.y = -10
 		else:
 			velocidadJugador.y += disminucionVelocidadJugador
-		
+	
+	yaRespondio = true
+	
+	demoraRespuesta.start()
 	for i in range (0, 4):
 		opciones.set_item_disabled(i, true)
-
-	demoraRespuesta.start()
 
 	print("numeroPregunta: ", numeroPregunta)
 	print("velocidadJugador: ", velocidadJugador)
@@ -99,13 +104,11 @@ func esRespuestaCorrecta(numeroPregunta : int, index):
 		print("Jugador respondió incorrectamente. Index: ", index, ". respuestaCorrecta: ", respuestaCorrecta)
 		return false
 
-
 func _on_DemoraRespuesta_timeout():
 	numeroPregunta += 1
 	print("Cargando pregunta: ", numeroPregunta)
 	cargar_preguntas_y_respuestas(ordenPreguntas[numeroPregunta])
-
-
+	yaRespondio = false
 
 func _on_actualizarDistancia_timeout():
 	mtsRecorridos += velocidadJugador.y * 10 * -1	

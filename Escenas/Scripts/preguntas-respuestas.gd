@@ -217,15 +217,5 @@ export var preguntasRespuestas = {
 		"correcta": 0
 	},
 	
-	18: {
-		"id": 18,
-		"pregunta": "",
-		"opciones": [
-			"",
-			"",
-			"",
-			""
-		],
-		"correcta": 1
-	},
+	
 }

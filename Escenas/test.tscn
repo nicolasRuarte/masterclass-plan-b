@@ -100,6 +100,7 @@ script = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="ParallaxEspacio" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="IU" type="CanvasLayer" parent="."]
 layer = 0
@@ -189,7 +190,7 @@ margin_bottom = 46.0
 theme = SubResource( 12 )
 
 [node name="jugador" parent="." instance=ExtResource( 9 )]
-position = Vector2( 182, -318 )
+position = Vector2( 185, 282 )
 
 [node name="DemoraRespuesta" type="Timer" parent="."]
 wait_time = 1.5
