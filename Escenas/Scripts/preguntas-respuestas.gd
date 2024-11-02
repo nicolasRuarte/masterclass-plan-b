@@ -217,5 +217,135 @@ export var preguntasRespuestas = {
 		"correcta": 0
 	},
 	
+	18: {
+		"id": 18,
+		"pregunta": "¿Cuántos tipos de ciberataque mencionamos en la exposición?",
+		"opciones": [
+			"5",
+			"4",
+			"3",
+			"6"
+		],
+		"correcta": 1
+	},
 	
+	19: {
+		"id": 19,
+		"pregunta": "¿Cuál de estas es una MALA práctica a la hora de crear una contraseña?",
+		"opciones": [
+			"Hacerla de más de 15 caracteres",
+			"Combinar letras, números y símbolos",
+			"Utilizar datos personales",
+			"Hacerla distinta a las demás"
+		],
+		"correcta": 2
+	},
+		
+	20: {
+		"id": 20,
+		"pregunta": "¿Cuál de estas es una MALA práctica de seguridad?",
+		"opciones": [
+			"Activar la autenticación de dos factores",
+			"Actualizar regularmente el software",
+			"Educarte sobre phishing",
+			"AGREGAR OPCIÓN"
+		],
+		"correcta": 3
+	},
+		
+	21: {
+		"id": 21,
+		"pregunta": "PREGUNTA REGALO. ELIGE LA PRIMERA OPCIÓN.",
+		"opciones": [
+			"Correcta",
+			"Incorrecta",
+			"Incorrecta",
+			"Incorrecta"
+		],
+		"correcta": 0
+	},
+		
+	22: {
+		"id": 22,
+		"pregunta": "¿Qué tipo de ciberataque es la estafa de Mercado Pago falso?",
+		"opciones": [
+			"Ingeniería social",
+			"Malware",
+			"DDoS",
+			"Inyección de código"
+		],
+		"correcta": 1
+	},
+	
+	23: {
+		"id": 23,
+		"pregunta": "¿Qué tipo de ciberataque es un virus?",
+		"opciones": [
+			"Inyección de código",
+			"Ingeniería social",
+			"Malware",
+			"DDoS"
+		],
+		"correcta": 2
+	},
+		
+	24: {
+		"id": 24,
+		"pregunta": "¿Qué tipos de ciberataques se realizan con el lenguaje SQL?",
+		"opciones": [
+			"DDoS",
+			"Malware",
+			"Ingeniería social",
+			"Inyección de código"
+		],
+		"correcta": 3
+	},
+			
+	25: {
+		"id": 25,
+		"pregunta": "¿De la unión de qué palabras proviene el término malware?",
+		"opciones": [
+			"Malicious y software",
+			"Maleficent y software",
+			"Malicious y hardware",
+			"Malevolent software"
+		],
+		"correcta": 0
+	},
+			
+	26: {
+		"id": 26,
+		"pregunta": "¿Qué es un ciberataque?",
+		"opciones": [
+			"Un ataque militar cibernético",
+			"Un intento de acceder a datos sin permiso",
+			"Un ataque a dispositivos de hardware",
+			"Realizar cyberbulying por las redes"
+		],
+		"correcta": 1
+	},
+			
+	27: {
+		"id": 27,
+		"pregunta": "¿Qué tipo de ciberataque se realiza mediante el uso de bots?",
+		"opciones": [
+			"Malware",
+			"Inyección de código",
+			"DDoS",
+			"Ingeniería social"
+		],
+		"correcta": 2
+	},
+			
+	28: {
+		"id": 28,
+		"pregunta": "Los hackers éticos son también conocidos como...",
+		"opciones": [
+			"Hackers de sombrero negro",
+			"Hackers caritativos",
+			"Hackers legales",
+			"Hackers de sombrero blanco"
+		],
+		"correcta": 3
+	},
 }
