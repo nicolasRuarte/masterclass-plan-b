@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Escenas/test.gd" type="Script" id=2]
@@ -6,7 +6,10 @@
 [ext_resource path="res://Escenas/ParallaxEspacio.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Musica/3DS Nintendo Video Theme (High Quality, Remastered 2022) [bpAHtjqUWvs].mp3" type="AudioStream" id=5]
 [ext_resource path="res://fuentes/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sprites/fuego.png" type="Texture" id=7]
+[ext_resource path="res://Audio/Efectos/80921__justinbw__buttonchime02up.wav" type="AudioStream" id=8]
 [ext_resource path="res://Escenas/jugador.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Audio/Efectos/incorrecto.wav" type="AudioStream" id=10]
 
 [sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0.509804, 0.0509804, 0.0509804, 1 )
@@ -29,8 +32,8 @@ Label/colors/font_color = Color( 0, 1, 0.309804, 1 )
 Label/styles/normal = SubResource( 18 )
 
 [sub_resource type="DynamicFont" id=24]
-size = 13
-font_data = ExtResource( 1 )
+size = 11
+font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=23]
 bg_color = Color( 0, 0, 0, 1 )
@@ -58,7 +61,7 @@ ItemList/constants/hseparation = 36
 ItemList/styles/bg = SubResource( 19 )
 
 [sub_resource type="DynamicFont" id=26]
-size = 10
+size = 8
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=25]
@@ -81,11 +84,29 @@ font_data = ExtResource( 1 )
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/fonts/font = SubResource( 20 )
 
-[sub_resource type="DynamicFont" id=21]
-font_data = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 97, 97 )
 
-[sub_resource type="Theme" id=16]
-Label/fonts/font = SubResource( 21 )
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 7 )
+region = Rect2( 97, 0, 97, 97 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 7 )
+region = Rect2( 194, 0, 97, 97 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 7 )
+region = Rect2( 291, 0, 97, 97 )
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="DynamicFont" id=22]
 font_data = ExtResource( 1 )
@@ -93,6 +114,42 @@ font_data = ExtResource( 1 )
 [sub_resource type="Theme" id=12]
 Label/colors/font_color = Color( 1, 1, 1, 1 )
 Label/fonts/font = SubResource( 22 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=33]
+resource_name = "fuego"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("IU/Fuego:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 8, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "fuego2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("IU/Fuego:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 7.72748, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.6, 0.6 ) ]
+}
 
 [sub_resource type="Animation" id=27]
 resource_name = "test"
@@ -173,25 +230,35 @@ margin_bottom = 47.0
 theme = SubResource( 1 )
 text = "kms recorridos:"
 
-[node name="Fin" type="Label" parent="IU"]
-margin_top = 160.0
-margin_right = 360.0
-margin_bottom = 232.0
-theme = SubResource( 16 )
+[node name="Fuego" type="AnimatedSprite" parent="IU"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 55, 38 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 32 )
+frame = 1
 
-[node name="Racha" type="Label" parent="IU"]
-margin_left = 7.0
-margin_top = 32.0
-margin_right = 47.0
-margin_bottom = 46.0
+[node name="Racha" type="Label" parent="IU/Fuego"]
+anchor_left = 0.396907
+anchor_top = 0.603093
+anchor_right = 0.623711
+anchor_bottom = 0.871134
+margin_left = -48.5
+margin_top = -48.5
+margin_right = -48.5
+margin_bottom = -48.5
 theme = SubResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 35 )
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Bonificador" type="Label" parent="IU"]
-margin_left = 24.0
-margin_top = 32.0
-margin_right = 64.0
-margin_bottom = 46.0
+margin_left = 74.0
+margin_top = 48.0
+margin_right = 114.0
+margin_bottom = 63.0
 theme = SubResource( 12 )
 
 [node name="jugador" parent="." instance=ExtResource( 9 )]
@@ -211,9 +278,22 @@ autostart = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 5 )
+volume_db = -1.0
 autoplay = true
 
+[node name="sonidoCorrecto" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 8 )
+volume_db = -0.5
+
+[node name="sonidoIncorrecto" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+volume_db = 0.3
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fuego = SubResource( 33 )
+anims/fuego2 = SubResource( 34 )
 anims/test = SubResource( 27 )
 
 [connection signal="item_selected" from="IU/ColorRect/opciones" to="." method="_on_ItemList_item_selected"]

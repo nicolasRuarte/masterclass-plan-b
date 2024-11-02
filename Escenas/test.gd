@@ -5,12 +5,9 @@ onready var nodoDatos
 onready var demoraRespuesta := get_node("DemoraRespuesta")
 onready var timerActualizarDistancia := get_node("actualizarDistancia")
 onready var labelMtsRecorridos := get_node("IU/mtsRecorridos")
-onready var labelFin := get_node("IU/Fin")
-onready var labelRacha := get_node("IU/Racha")
 onready var labelBonificador := get_node("IU/Bonificador")
 
 var subirDatos = preload("res://Escenas/SubirDatos.tscn")
-
 
 #Variables para las preguntas
 var cantidadPreguntas := 0
@@ -20,7 +17,7 @@ var yaRespondio = false
 #Variables de la velocidad del jugador
 export var velocidadJugador = Vector2(0, -10)
 const aumentoVelocidadJugador = -30
-const disminucionVelocidadJugador = aumentoVelocidadJugador / 2
+const disminucionVelocidadJugador = 15
 
 #Variables para el desarrollo de las preguntas del juego
 var ordenPreguntas := []
@@ -56,23 +53,25 @@ func _on_ItemList_item_selected(index):
 		var cuestionario = subirDatos.instance()
 		$IU.add_child(cuestionario)
 		get_tree().paused = true
-		labelFin.text = "¡Terminaste todas las preguntas!"
 	
 	if(yaRespondio):
 		return
 	
 	if (esRespuestaCorrecta(numeroPregunta, index)):
 		opciones.set_item_custom_bg_color(index, Color(0.0, 1.0, 0.0))
+		$sonidoCorrecto.play()
 		rachaRespuestasCorrectas += 1
 		bonusRacha(rachaRespuestasCorrectas)
-		labelRacha.text = str(rachaRespuestasCorrectas)
+		$IU/Fuego/Racha.text = str(rachaRespuestasCorrectas)
 		velocidadJugador.y += aumentoVelocidadJugador - bonificador
 	else:
 		opciones.set_item_custom_bg_color(index, Color(1.0, 0.0, 0.0))
+		$sonidoIncorrecto.play()
 		rachaRespuestasCorrectas = 0
+		$IU/Fuego/Racha.text = str(rachaRespuestasCorrectas)
 		bonusRacha(rachaRespuestasCorrectas)
 		bonificador = 0
-		var mayorQueCero = velocidadJugador.y + disminucionVelocidadJugador < 0
+		var mayorQueCero = velocidadJugador.y + disminucionVelocidadJugador > 0
 		if (mayorQueCero):
 			velocidadJugador.y = -10
 		else:
@@ -116,17 +115,22 @@ func _on_actualizarDistancia_timeout():
 	
 	labelMtsRecorridos.text = "kms recorridos: " + str(mtsRecorridos)
 
-func bonusRacha(racha): 
+func bonusRacha(racha):	 
 	match racha:
 		5:
 			bonificador = 10
 			labelBonificador.text = "+" + str(bonificador)
+			$AnimationPlayer.play("fuego")
+			$IU/Fuego.play("default")
+			$IU/Fuego/Racha.add_color_override("font_color", Color(0, 0, 0))
 		10:
 			bonificador = 20
 			labelBonificador.text = "+" + str(bonificador)
+			$AnimationPlayer.play("fuego2")
+			print("Escala fuego pasó a : ", $IU/Fuego.scale)
 		15:
 			bonificador = 30
 			labelBonificador.text = "+" + str(bonificador)
 		20:
-			bonificador = 40
+			bonificador = 50
 			labelBonificador.text = "+" + str(bonificador)
