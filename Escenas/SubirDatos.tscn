@@ -1,8 +1,10 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Escenas/SubirDatos.gd" type="Script" id=1]
+[ext_resource path="res://Escenas/Scripts/SubirDatos.gd" type="Script" id=1]
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Audio/Efectos/success.wav" type="AudioStream" id=3]
+[ext_resource path="res://fuentes/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sprites/tile052.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 corner_radius_top_left = 5
@@ -94,6 +96,9 @@ Label/fonts/font = SubResource( 8 )
 
 [sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=21]
+font_data = ExtResource( 4 )
 
 [node name="SubirDatos" type="Control"]
 pause_mode = 2
@@ -191,8 +196,25 @@ text = "Terminaste todas las preguntas"
 stream = ExtResource( 3 )
 autoplay = true
 
+[node name="Cerrar" type="Button" parent="."]
+margin_left = 300.0
+margin_top = 1.0
+margin_right = 359.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 21 )
+icon = ExtResource( 5 )
+flat = true
+align = 0
+icon_align = 1
+expand_icon = true
+
+[node name="Sprite" type="Sprite" parent="."]
+hframes = 2
+vframes = 2
+
 [connection signal="focus_entered" from="nombreUsuario" to="." method="_on_nombreUsuario_focus_entered"]
 [connection signal="focus_exited" from="nombreUsuario" to="." method="_on_nombreUsuario_focus_exited"]
 [connection signal="button_up" from="SubirDatos" to="." method="_on_SubirDatos_button_up"]
 [connection signal="request_completed" from="VerificarUsuario" to="." method="_on_VerificarUsuario_request_completed"]
 [connection signal="request_completed" from="SubirPuntaje" to="." method="_on_SubirPuntaje_request_completed"]
+[connection signal="button_up" from="Cerrar" to="." method="_on_Cerrar_button_up"]
