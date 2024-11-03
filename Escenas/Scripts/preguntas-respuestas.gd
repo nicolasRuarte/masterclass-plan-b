@@ -29,8 +29,8 @@ export var preguntasRespuestas = {
 		"id": 2,
 		"pregunta": "¿Qué es la ciberseguridad?",
 		"opciones": [
-			"Todo lo referido a la seguridad informática",
-			"Requisitos  para mantener un ciber",
+			"Todo sobre seguridad informática",
+			"Requisitos para un ciber",
 			"Un lenguaje de programación",
 			"Un tipo de virus"
 		],
@@ -41,9 +41,9 @@ export var preguntasRespuestas = {
 		"id": 3,
 		"pregunta": "¿Para qué nos sirve la ciberseguridad?",
 		"opciones": [
-			"Para proteger nuestra información",
-			"Para valorar nuestra información",
-			"Para evitar el robo de información",
+			"Protege nuestra información",
+			"Valora nuestra información",
+			"Evita el robo de información",
 			"Todas las anteriores"
 		],
 		"correcta": 3
@@ -66,8 +66,8 @@ export var preguntasRespuestas = {
 		"pregunta": "¿Cuál es la función de las VPN?",
 		"opciones": [
 			"Encriptar contraseñas",
-			"Prevenir fraudes cibernéticos",
-			"Redirigir nuestra señal al navegar",
+			"Prevenir ciberdelitos",
+			"Redirigir nuestra señal",
 			"Todas las anteriores"
 		],
 		"correcta": 2
@@ -99,7 +99,7 @@ export var preguntasRespuestas = {
 	
 	8: {
 		"id": 8,
-		"pregunta": "Según el número de objetivos, ¿En que se dividen los ciberataques?",
+		"pregunta": "Según el número de objetivos, ¿En qué se dividen los ciberataques?",
 		"opciones": [
 			"Único y múltiple",
 			"Dirigido y no dirigido",
@@ -125,10 +125,10 @@ export var preguntasRespuestas = {
 		"id": 10,
 		"pregunta": "¿En qué partes se divide un virus?",
 		"opciones": [
-			"Montado, carga y descarga",
-			"Mecanismo de infección, disparador y carga",
-			"Head, body y footer",
-			"Cabezal, torso y pata"
+			"Montado/Carga/Descarga",
+			"Mecanismo de infección/Disparador/Carga",
+			"Head/Body/Footer",
+			"Cabezal/Torso/Pata"
 		],
 		"correcta": 1
 	},
@@ -152,7 +152,7 @@ export var preguntasRespuestas = {
 			"Un hacker que roba información",
 			"Un desarrollador de software",
 			"Un experto en redes",
-			"Un profesional de la ciberseguridad"
+			"Un profesional en ciberseguridad"
 		],
 		"correcta": 3
 	},
@@ -162,9 +162,9 @@ export var preguntasRespuestas = {
 		"pregunta": "¿Qué caracteriza a un virus informático?",
 		"opciones": [
 			"Su capacidad de replicarse",
-			"Su capacidad para eliminar malware",
-			"Su capacidad para cifrar archivos ",
-			"Su capacidad de mejorar el sistema"
+			"Su capacidad de eliminar malware",
+			"Su capacidad de  cifrar archivos ",
+			"Su ayuda al dispositivo"
 		],
 		"correcta": 0
 	},
@@ -175,7 +175,7 @@ export var preguntasRespuestas = {
 		"opciones": [
 			"En un archivo de texto",
 			"En un gestor de contraseñas",
-			"En una libreta u hoja de papel",
+			"En una hoja de papel",
 			"En WhatsApp"
 		],
 		"correcta": 1
@@ -219,7 +219,7 @@ export var preguntasRespuestas = {
 	
 	18: {
 		"id": 18,
-		"pregunta": "¿Cuántos tipos de ciberataque mencionamos en la exposición?",
+		"pregunta": "Según metodología, ¿Cuántos tipos de ciberataque mencionamos en la exposición?",
 		"opciones": [
 			"5",
 			"4",
@@ -234,7 +234,7 @@ export var preguntasRespuestas = {
 		"pregunta": "¿Cuál de estas es una MALA práctica a la hora de crear una contraseña?",
 		"opciones": [
 			"Hacerla de más de 15 caracteres",
-			"Combinar letras, números y símbolos",
+			"Mezclar letras, números y símbolos",
 			"Utilizar datos personales",
 			"Hacerla distinta a las demás"
 		],
@@ -245,10 +245,10 @@ export var preguntasRespuestas = {
 		"id": 20,
 		"pregunta": "¿Cuál de estas es una MALA práctica de seguridad?",
 		"opciones": [
-			"Activar la autenticación de dos factores",
-			"Actualizar regularmente el software",
+			"Activar el 2FA",
+			"Tener software actualizado",
 			"Educarte sobre phishing",
-			"Usar siempre la misma contraseña"
+			"Repetir la misma contraseña"
 		],
 		"correcta": 3
 	},
@@ -318,9 +318,9 @@ export var preguntasRespuestas = {
 		"pregunta": "¿Qué es un ciberataque?",
 		"opciones": [
 			"Un ataque militar cibernético",
-			"Un intento de acceder a datos sin permiso",
-			"Un ataque a dispositivos de hardware",
-			"Realizar cyberbulying por las redes"
+			"Acceso a datos sin consentimiento",
+			"Ataque a hardware",
+			"Hacer cyberbulying por las redes"
 		],
 		"correcta": 1
 	},
@@ -347,5 +347,41 @@ export var preguntasRespuestas = {
 			"Hackers de sombrero blanco"
 		],
 		"correcta": 3
+	},
+	
+	29: {
+		"id": 29,
+		"pregunta": "¿Qué significa DoS en Español?",
+		"opciones": [
+			"Denegación de Servicio",
+			"Destrucción de Servicio",
+			"Disminución de Servicio",
+			"Desarmado de Serviico"
+		],
+		"correcta": 0
+	},
+		
+	30: {
+		"id": 30,
+		"pregunta": "¿En qué año se sancionó la Ley 25.326? Más conocida como Ley de Protección de Datos Personales",
+		"opciones": [
+			"2001",
+			"2000",
+			"2002",
+			"2003"
+		],
+		"correcta": 1
+	},
+			
+	31: {
+		"id": 31,
+		"pregunta": "¿Cuántas leyes de protección de datos personales existen en Argentina?",
+		"opciones": [
+			"1",
+			"4",
+			"2",
+			"3"
+		],
+		"correcta": 2
 	},
 }
