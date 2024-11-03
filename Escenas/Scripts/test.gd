@@ -13,6 +13,7 @@ var subirDatos = preload("res://Escenas/SubirDatos.tscn")
 var cantidadPreguntas := 0
 var datos
 var yaRespondio = false
+var estaEnRacha := false
 
 #Variables de la velocidad del jugador
 export var velocidadJugador = Vector2(0, -10)
@@ -65,18 +66,25 @@ func _on_ItemList_item_selected(index):
 		bonusRacha(rachaRespuestasCorrectas)
 		$IU/Fuego/Racha.text = str(rachaRespuestasCorrectas)
 		velocidadJugador.y += aumentoVelocidadJugador - bonificador
+		$IU/Dialogo.hablar(true)
 	else:
 		opciones.set_item_custom_bg_color(index, Color(1.0, 0.0, 0.0))
 		$sonidoIncorrecto.play()
 		rachaRespuestasCorrectas = 0
 		$IU/Fuego/Racha.text = str(rachaRespuestasCorrectas)
-		bonusRacha(rachaRespuestasCorrectas)
+		
+		if (estaEnRacha):
+			$AnimationPlayer.play_backwards("fuego")
+			$IU/Fuego/Racha.add_color_override("font_color", Color(0, 0, 0 ))
+		estaEnRacha = false
 		bonificador = 0
+		
 		var mayorQueCero = velocidadJugador.y + disminucionVelocidadJugador > 0
 		if (mayorQueCero):
 			velocidadJugador.y = -10
 		else:
 			velocidadJugador.y += disminucionVelocidadJugador
+		$IU/Dialogo.hablar(false)
 	
 	yaRespondio = true
 	
@@ -96,8 +104,8 @@ func cargar_preguntas_y_respuestas(idPregunta : int):
 		opciones.add_item(respuestas[i])
 	
 
-func esRespuestaCorrecta(numeroPregunta : int, index):
-	var respuestaCorrecta = datos[ ordenPreguntas[numeroPregunta] ] [ "correcta" ]
+func esRespuestaCorrecta(numPregunta, index):
+	var respuestaCorrecta = datos[ ordenPreguntas[numPregunta] ] [ "correcta" ]
 	if (index == respuestaCorrecta):
 		print("Jugador respondió correctamente. Index: ", index, ". respuestaCorrecta: ", respuestaCorrecta)
 		return true
@@ -119,6 +127,7 @@ func _on_actualizarDistancia_timeout():
 func bonusRacha(racha):	 
 	match racha:
 		5:
+			estaEnRacha = true
 			bonificador = 10
 			labelBonificador.text = "+" + str(bonificador)
 			$AnimationPlayer.play("fuego")
