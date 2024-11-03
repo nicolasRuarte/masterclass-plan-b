@@ -33,6 +33,7 @@ var mtsRecorridos := 0.0
 
 func _ready():
 	randomize()
+	$AudioStreamPlayer.play()
 	nodoDatos = get_node("datos")
 	datos = nodoDatos.preguntasRespuestas
 	cantidadPreguntas = datos.size()
