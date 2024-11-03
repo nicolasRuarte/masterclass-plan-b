@@ -215,17 +215,15 @@ text = "Jugar"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -2.447
-autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 26 )
 anims/texto = SubResource( 27 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 180.75, 130.25 )
+position = Vector2( 180.75, 121.25 )
 scale = Vector2( 1.04062, 1.12812 )
 frames = SubResource( 29 )
-frame = 7
 playing = true
 
 [connection signal="timeout" from="AnimacionTitulo" to="." method="_on_AnimacionTitulo_timeout"]
