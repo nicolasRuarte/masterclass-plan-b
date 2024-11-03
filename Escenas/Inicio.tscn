@@ -3,7 +3,7 @@
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Escenas/ParallaxEspacio.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fuentes/PlayMeGames-Demo.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://Escenas/Inicio.gd" type="Script" id=4]
+[ext_resource path="res://Escenas/Scripts/Inicio.gd" type="Script" id=4]
 [ext_resource path="res://roberto-achicado.png" type="Texture" id=5]
 [ext_resource path="res://Audio/Musica/DuckTales Music (NES) - The Moon Theme [KF32DRg9opA].mp3" type="AudioStream" id=6]
 
@@ -224,6 +224,7 @@ anims/texto = SubResource( 27 )
 position = Vector2( 180.75, 121.25 )
 scale = Vector2( 1.04062, 1.12812 )
 frames = SubResource( 29 )
+frame = 4
 playing = true
 
 [connection signal="timeout" from="AnimacionTitulo" to="." method="_on_AnimacionTitulo_timeout"]

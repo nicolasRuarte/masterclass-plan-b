@@ -78,3 +78,6 @@ func _on_nombreUsuario_focus_entered():
 
 func _on_nombreUsuario_focus_exited():
 	$TecladoVirtual/ColorRect.visible = true
+
+func _on_Cerrar_button_up():
+	get_tree().quit()

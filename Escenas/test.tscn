@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Escenas/test.gd" type="Script" id=2]
+[ext_resource path="res://Escenas/Scripts/test.gd" type="Script" id=2]
 [ext_resource path="res://Escenas/Scripts/preguntas-respuestas.gd" type="Script" id=3]
 [ext_resource path="res://Escenas/ParallaxEspacio.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/Musica/3DS Nintendo Video Theme (High Quality, Remastered 2022) [bpAHtjqUWvs].mp3" type="AudioStream" id=5]
