@@ -76,6 +76,7 @@ func _on_ItemList_item_selected(index):
 		if (estaEnRacha):
 			$AnimationPlayer.play_backwards("fuego")
 			$IU/Fuego/Racha.add_color_override("font_color", Color(0, 0, 0 ))
+			labelBonificador.text = ""
 		estaEnRacha = false
 		bonificador = 0
 		
@@ -133,6 +134,7 @@ func bonusRacha(racha):
 			$AnimationPlayer.play("fuego")
 			$IU/Fuego.play("default")
 			$IU/Fuego/Racha.add_color_override("font_color", Color(0, 0, 0))
+			$Racha.play()
 		10:
 			bonificador = 20
 			labelBonificador.text = "+" + str(bonificador)

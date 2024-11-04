@@ -29,7 +29,7 @@ export var preguntasRespuestas = {
 		"id": 2,
 		"pregunta": "¿Qué es la ciberseguridad?",
 		"opciones": [
-			"Todo sobre seguridad informática",
+			"La seguridad informática",
 			"Requisitos para un ciber",
 			"Un lenguaje de programación",
 			"Un tipo de virus"
@@ -92,7 +92,7 @@ export var preguntasRespuestas = {
 			"Tailgating",
 			"Vishing",
 			"Smishing",
-			"Spear fishing"
+			"Spear phishing"
 		],
 		"correcta": 2
 	},
@@ -123,24 +123,24 @@ export var preguntasRespuestas = {
 		
 	10: {
 		"id": 10,
-		"pregunta": "¿En qué partes se divide un virus?",
+		"pregunta": "¿Cuál de estos no es una parte de un virus?",
 		"opciones": [
-			"Montado/Carga/Descarga",
-			"Mecanismo de infección/Disparador/Carga",
-			"Head/Body/Footer",
-			"Cabezal/Torso/Pata"
+			"Mecanismo de infección",
+			"Almacenador",
+			"Disparador",
+			"Carga"
 		],
 		"correcta": 1
 	},
 
 	11: {
 		"id": 11,
-		"pregunta": "¿Qué significa DDoS en español?",
+		"pregunta": "¿Qué significa la primera D en DDoS?",
 		"opciones": [
-			"Deleitación de Servicio Disminuida",
-			"Despliegue de Servicio Distribuido",
-			"Denegación de Servicio Distribuida",
-			"Desarme de Servicio Desatendido"
+			"Denial (Denegación)",
+			"Deployed (Desplegado)",
+			"Distributed (Distribuida)",
+			"Disarm (Desarme)"
 		],
 		"correcta": 2
 	},
@@ -152,7 +152,7 @@ export var preguntasRespuestas = {
 			"Un hacker que roba información",
 			"Un desarrollador de software",
 			"Un experto en redes",
-			"Un profesional en ciberseguridad"
+			"Profesional en ciberseguridad"
 		],
 		"correcta": 3
 	},
@@ -162,8 +162,8 @@ export var preguntasRespuestas = {
 		"pregunta": "¿Qué caracteriza a un virus informático?",
 		"opciones": [
 			"Su capacidad de replicarse",
-			"Su capacidad de eliminar malware",
-			"Su capacidad de  cifrar archivos ",
+			"Su capacidad de borrar malware",
+			"Su función de cifrar archivos ",
 			"Su ayuda al dispositivo"
 		],
 		"correcta": 0
@@ -233,8 +233,8 @@ export var preguntasRespuestas = {
 		"id": 19,
 		"pregunta": "¿Cuál de estas es una MALA práctica a la hora de crear una contraseña?",
 		"opciones": [
-			"Hacerla de más de 15 caracteres",
-			"Mezclar letras, números y símbolos",
+			"Hacerla mayor a 15 caracteres",
+			"Usar letras, números, símbolos",
 			"Utilizar datos personales",
 			"Hacerla distinta a las demás"
 		],
@@ -318,9 +318,9 @@ export var preguntasRespuestas = {
 		"pregunta": "¿Qué es un ciberataque?",
 		"opciones": [
 			"Un ataque militar cibernético",
-			"Acceso a datos sin consentimiento",
+			"Acceso a datos sin permiso",
 			"Ataque a hardware",
-			"Hacer cyberbulying por las redes"
+			"Hacer cyberbulying"
 		],
 		"correcta": 1
 	},
@@ -384,4 +384,28 @@ export var preguntasRespuestas = {
 		],
 		"correcta": 2
 	},
+	
+	32: {
+		"id": 32,
+		"pregunta": "¿Qué significa la segunda \"D\" en DDoS?",
+		"opciones": [
+			"Distributed (Distribuido)",
+			"Deploy (Despliegue)",
+			"Dynamic (Dinámico)",
+			"Denial (Denegación)"
+		],
+		"correcta": 3
+	},
+	
+	33: {
+		"id": 33,
+		"pregunta": "¿Qué significa la \"S\" en DDoS?",
+		"opciones": [
+			"Service (Servicio)",
+			"Software (Software)",
+			"Science (Ciencia)",
+			"System (Sistema)"
+		],
+		"correcta": 0
+	}
 }
