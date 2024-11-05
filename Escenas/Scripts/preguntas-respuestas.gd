@@ -84,21 +84,9 @@ export var preguntasRespuestas = {
 		],
 		"correcta": 0
 	},
-
+	
 	7: {
 		"id": 7,
-		"pregunta": "¿Cómo se llama la variante del phishing que se realiza mediante SMS?",
-		"opciones": [
-			"Tailgating",
-			"Vishing",
-			"Smishing",
-			"Spear phishing"
-		],
-		"correcta": 2
-	},
-	
-	8: {
-		"id": 8,
 		"pregunta": "Según el número de objetivos, ¿En qué se dividen los ciberataques?",
 		"opciones": [
 			"Único y múltiple",
@@ -109,8 +97,8 @@ export var preguntasRespuestas = {
 		"correcta": 1
 	},
 
-	9: {
-		"id": 9,
+	8: {
+		"id": 8,
 		"pregunta": "¿Quiénes son contratados para verificar y mejorar la seguridad de los sistemas de las empresas?",
 		"opciones": [
 			"Hackers de sombrero negro",
@@ -121,8 +109,8 @@ export var preguntasRespuestas = {
 		"correcta": 2
 	},
 		
-	10: {
-		"id": 10,
+	9: {
+		"id": 9,
 		"pregunta": "¿Cuál de estos no es una parte de un virus?",
 		"opciones": [
 			"Mecanismo de infección",
@@ -132,21 +120,21 @@ export var preguntasRespuestas = {
 		],
 		"correcta": 1
 	},
+	
+	10: {
+		"id": 10,
+		"pregunta": "¿En qué año se sancionó la Ley 25.326? Más conocida como Ley de Protección de Datos Personales",
+		"opciones": [
+			"2001",
+			"2000",
+			"2002",
+			"2003"
+		],
+		"correcta": 1
+	},
 
 	11: {
 		"id": 11,
-		"pregunta": "¿Qué significa la primera D en DDoS?",
-		"opciones": [
-			"Denial (Denegación)",
-			"Deployed (Desplegado)",
-			"Distributed (Distribuida)",
-			"Disarm (Desarme)"
-		],
-		"correcta": 2
-	},
-
-	12: {
-		"id": 12,
 		"pregunta": "¿Qué es un hacker ético?",
 		"opciones": [
 			"Un hacker que roba información",
@@ -157,8 +145,8 @@ export var preguntasRespuestas = {
 		"correcta": 3
 	},
 	
-	13: {
-		"id": 13,
+	12: {
+		"id": 12,
 		"pregunta": "¿Qué caracteriza a un virus informático?",
 		"opciones": [
 			"Su capacidad de replicarse",
@@ -169,8 +157,8 @@ export var preguntasRespuestas = {
 		"correcta": 0
 	},
 	
-	14: {
-		"id": 14,
+	13: {
+		"id": 13,
 		"pregunta": "¿Cuál es la manera recomendada de almacenar contraseñas?",
 		"opciones": [
 			"En un archivo de texto",
@@ -181,8 +169,8 @@ export var preguntasRespuestas = {
 		"correcta": 1
 	},
 	
-	15: {
-		"id": 15,
+	14: {
+		"id": 14,
 		"pregunta": "¿Qué significan las siglas en inglés de VPN?",
 		"opciones": [
 			"Virtual Private Notification",
@@ -193,20 +181,8 @@ export var preguntasRespuestas = {
 		"correcta": 2
 	},
 	
-16: {
-		"id": 16,
-		"pregunta": "¿Cómo se llama la técnica utilizada por las VPN para proteger el tráfico de red?",
-		"opciones": [
-			"Hiding",
-			"Esconding",
-			"Encrypting",
-			"Tunneling"
-		],
-		"correcta": 3
-	},
-	
-	17: {
-		"id": 17,
+	15: {
+		"id": 15,
 		"pregunta": "¿En qué año fue sancionada la ley 26.388 para los delitos informáticos?",
 		"opciones": [
 			"2008",
@@ -217,20 +193,8 @@ export var preguntasRespuestas = {
 		"correcta": 0
 	},
 	
-	18: {
-		"id": 18,
-		"pregunta": "Según metodología, ¿Cuántos tipos de ciberataque mencionamos en la exposición?",
-		"opciones": [
-			"5",
-			"4",
-			"3",
-			"6"
-		],
-		"correcta": 1
-	},
-	
-	19: {
-		"id": 19,
+	16: {
+		"id": 16,
 		"pregunta": "¿Cuál de estas es una MALA práctica a la hora de crear una contraseña?",
 		"opciones": [
 			"Hacerla mayor a 15 caracteres",
@@ -241,8 +205,8 @@ export var preguntasRespuestas = {
 		"correcta": 2
 	},
 		
-	20: {
-		"id": 20,
+	17: {
+		"id": 17,
 		"pregunta": "¿Cuál de estas es una MALA práctica de seguridad?",
 		"opciones": [
 			"Activar el 2FA",
@@ -253,8 +217,8 @@ export var preguntasRespuestas = {
 		"correcta": 3
 	},
 		
-	21: {
-		"id": 21,
+	18: {
+		"id": 18,
 		"pregunta": "PREGUNTA REGALO. ELIGE LA PRIMERA OPCIÓN.",
 		"opciones": [
 			"Correcta",
@@ -265,8 +229,8 @@ export var preguntasRespuestas = {
 		"correcta": 0
 	},
 		
-	22: {
-		"id": 22,
+	19: {
+		"id": 19,
 		"pregunta": "¿Qué tipo de ciberataque es la estafa de Mercado Pago falso?",
 		"opciones": [
 			"Malware",
@@ -276,21 +240,9 @@ export var preguntasRespuestas = {
 		],
 		"correcta": 1
 	},
-	
-	23: {
-		"id": 23,
-		"pregunta": "¿Qué tipo de ciberataque es un virus?",
-		"opciones": [
-			"Inyección de código",
-			"Ingeniería social",
-			"Malware",
-			"DDoS"
-		],
-		"correcta": 2
-	},
 		
-	24: {
-		"id": 24,
+	20: {
+		"id": 20,
 		"pregunta": "¿Qué tipos de ciberataques se realizan con el lenguaje SQL?",
 		"opciones": [
 			"DDoS",
@@ -301,8 +253,8 @@ export var preguntasRespuestas = {
 		"correcta": 3
 	},
 			
-	25: {
-		"id": 25,
+	21: {
+		"id": 21,
 		"pregunta": "¿De la unión de qué palabras proviene el término malware?",
 		"opciones": [
 			"Malicious y software",
@@ -313,8 +265,8 @@ export var preguntasRespuestas = {
 		"correcta": 0
 	},
 			
-	26: {
-		"id": 26,
+	22: {
+		"id": 22,
 		"pregunta": "¿Qué es un ciberataque?",
 		"opciones": [
 			"Un ataque militar cibernético",
@@ -325,20 +277,20 @@ export var preguntasRespuestas = {
 		"correcta": 1
 	},
 			
-	27: {
-		"id": 27,
+	23: {
+		"id": 23,
 		"pregunta": "¿Qué tipo de ciberataque se realiza mediante el uso de bots?",
 		"opciones": [
 			"Malware",
 			"Inyección de código",
-			"DDoS",
+			"Denegación de servicio",
 			"Ingeniería social"
 		],
 		"correcta": 2
 	},
 			
-	28: {
-		"id": 28,
+	24: {
+		"id": 24,
 		"pregunta": "Los hackers éticos son también conocidos como...",
 		"opciones": [
 			"Hackers de sombrero negro",
@@ -349,8 +301,8 @@ export var preguntasRespuestas = {
 		"correcta": 3
 	},
 	
-	29: {
-		"id": 29,
+	25: {
+		"id": 25,
 		"pregunta": "¿Qué significa DoS en Español?",
 		"opciones": [
 			"Denegación de Servicio",
@@ -360,52 +312,4 @@ export var preguntasRespuestas = {
 		],
 		"correcta": 0
 	},
-		
-	30: {
-		"id": 30,
-		"pregunta": "¿En qué año se sancionó la Ley 25.326? Más conocida como Ley de Protección de Datos Personales",
-		"opciones": [
-			"2001",
-			"2000",
-			"2002",
-			"2003"
-		],
-		"correcta": 1
-	},
-			
-	31: {
-		"id": 31,
-		"pregunta": "¿Cuántas leyes de protección de datos personales existen en Argentina?",
-		"opciones": [
-			"1",
-			"4",
-			"2",
-			"3"
-		],
-		"correcta": 2
-	},
-	
-	32: {
-		"id": 32,
-		"pregunta": "¿Qué significa la segunda \"D\" en DDoS?",
-		"opciones": [
-			"Distributed (Distribuido)",
-			"Deploy (Despliegue)",
-			"Dynamic (Dinámico)",
-			"Denial (Denegación)"
-		],
-		"correcta": 3
-	},
-	
-	33: {
-		"id": 33,
-		"pregunta": "¿Qué significa la \"S\" en DDoS?",
-		"opciones": [
-			"Service (Servicio)",
-			"Software (Software)",
-			"Science (Ciencia)",
-			"System (Sistema)"
-		],
-		"correcta": 0
-	}
 }

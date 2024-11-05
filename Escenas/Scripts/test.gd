@@ -34,6 +34,7 @@ var mtsRecorridos := 0.0
 
 func _ready():
 	randomize()
+	$IU/DuracionPregunta.start()
 	$AudioStreamPlayer.play()
 	nodoDatos = get_node("datos")
 	datos = nodoDatos.preguntasRespuestas
@@ -48,6 +49,9 @@ func _ready():
 	
 	cargar_preguntas_y_respuestas(ordenPreguntas[0])
 
+func _process(delta):
+	$IU/TiempoPregunta.text = str(floor($IU/DuracionPregunta.time_left))
+
 func _on_ItemList_item_selected(index):
 	fin = numeroPregunta == cantidadPreguntas - 1
 	
@@ -59,6 +63,7 @@ func _on_ItemList_item_selected(index):
 	if(yaRespondio):
 		return
 	
+	$IU/DuracionPregunta.stop()
 	if (esRespuestaCorrecta(numeroPregunta, index)):
 		opciones.set_item_custom_bg_color(index, Color(0.0, 1.0, 0.0))
 		$sonidoCorrecto.play()
@@ -104,6 +109,8 @@ func cargar_preguntas_y_respuestas(idPregunta : int):
 	for i in range(0, 4):
 		opciones.add_item(respuestas[i])
 	
+	$IU/DuracionPregunta.start()
+	
 
 func esRespuestaCorrecta(numPregunta, index):
 	var respuestaCorrecta = datos[ ordenPreguntas[numPregunta] ] [ "correcta" ]
@@ -138,11 +145,20 @@ func bonusRacha(racha):
 		10:
 			bonificador = 20
 			labelBonificador.text = "+" + str(bonificador)
-			$AnimationPlayer.play("fuego2")
-			print("Escala fuego pasó a : ", $IU/Fuego.scale)
 		15:
 			bonificador = 30
 			labelBonificador.text = "+" + str(bonificador)
 		20:
 			bonificador = 50
 			labelBonificador.text = "+" + str(bonificador)
+
+
+func _on_DuracionPregunta_timeout():
+	$sonidoIncorrecto.play()
+	yaRespondio = true
+	var correcta = datos[numeroPregunta]["correcta"]
+	
+	for i in range(0, 4):
+		opciones.set_item_custom_bg_color(i, Color(1, 0, 0))
+		opciones.set_item_disabled(i, true)
+	$DemoraRespuesta.start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://fuentes/upheavtt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Escenas/Scripts/test.gd" type="Script" id=2]
@@ -121,6 +121,17 @@ Label/fonts/font = SubResource( 22 )
 [sub_resource type="DynamicFont" id=35]
 size = 20
 font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 14
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.917647, 0.917647, 0.917647, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [sub_resource type="Animation" id=33]
 resource_name = "fuego"
@@ -266,6 +277,22 @@ theme = SubResource( 12 )
 
 [node name="Dialogo" parent="IU" instance=ExtResource( 11 )]
 
+[node name="DuracionPregunta" type="Timer" parent="IU"]
+wait_time = 30.0
+one_shot = true
+
+[node name="TiempoPregunta" type="Label" parent="IU"]
+margin_left = 303.0
+margin_top = 308.0
+margin_right = 343.0
+margin_bottom = 348.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 36 )
+custom_styles/normal = SubResource( 37 )
+text = "00"
+align = 1
+valign = 1
+
 [node name="jugador" parent="." instance=ExtResource( 9 )]
 position = Vector2( 185, 282 )
 
@@ -306,5 +333,6 @@ stream = ExtResource( 12 )
 volume_db = 4.0
 
 [connection signal="item_selected" from="IU/ColorRect/opciones" to="." method="_on_ItemList_item_selected"]
+[connection signal="timeout" from="IU/DuracionPregunta" to="." method="_on_DuracionPregunta_timeout"]
 [connection signal="timeout" from="DemoraRespuesta" to="." method="_on_DemoraRespuesta_timeout"]
 [connection signal="timeout" from="actualizarDistancia" to="." method="_on_actualizarDistancia_timeout"]

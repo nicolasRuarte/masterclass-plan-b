@@ -225,7 +225,7 @@ anims/texto = SubResource( 27 )
 position = Vector2( 180.75, 121.25 )
 scale = Vector2( 1.04062, 1.12812 )
 frames = SubResource( 29 )
-frame = 3
+frame = 7
 playing = true
 
 [connection signal="timeout" from="AnimacionTitulo" to="." method="_on_AnimacionTitulo_timeout"]
